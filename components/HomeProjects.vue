@@ -30,8 +30,8 @@ export default {
     projectsOver (e) {
       const projectRect = document.getElementById('home-projects').getBoundingClientRect()
 
-      let xPosTilt = e.layerX / projectRect.width * 100 - 50
-      let yPosTilt = e.layerY / projectRect.height * 100 - 50
+      let xPosTilt = e.layerX / projectRect.width * 50 - 25
+      let yPosTilt = e.layerY / projectRect.height * 50 - 25
 
       TweenLite.to('#home-projects', 0.7, {
         rotationY: 0.05 * xPosTilt,
@@ -67,7 +67,7 @@ export default {
   width: 250px;
   height: 150px;
   flex: 1 1 50%;
-  padding: rem-calc(10px);
+  padding: .8rem;
 
   &_nintendo {
     background-color: $c-nintendo;
