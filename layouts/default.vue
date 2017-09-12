@@ -1,7 +1,7 @@
 <template>
   <div>
-    <SiteHeader></SiteHeader>
-    <nuxt/>
+    <SiteHeader />
+    <nuxt class="site-holder"/>
   </div>
 </template>
 
@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style>
-
+  .site-holder {
+  	position: relative;
+  	z-index: 1;
+  }
 
 </style>
