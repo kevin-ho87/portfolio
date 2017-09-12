@@ -13,8 +13,7 @@ export default {
   data () {
     return {
       flip: false,
-      robotValModifier: 1,
-      angleRobotFaceModifier: 120
+      robotValModifier: 1
     }
   },
   watch: {
@@ -28,12 +27,13 @@ export default {
     coords (e) {
       const robotRect = document.getElementById('robot-head').getBoundingClientRect()
       const robotCenter = [robotRect.left + robotRect.width / 2, robotRect.top + robotRect.height / 2]
+      const angleRobotFaceModifier = 120
 
       let angle = Math.atan2(e.pageX - robotCenter[0], -(e.pageY - robotCenter[1])) * this.robotValModifier * (180 / Math.PI)
 
       TweenLite.set('.robot-head', {
         transformOrigin: '50% 50%',
-        rotation: angle + this.angleRobotFaceModifier
+        rotation: angle + angleRobotFaceModifier
       })
 
       if (e.clientX > robotCenter[0]) {
@@ -47,8 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~assets/sass/base/settings";
-
 .robot-world {
   width: 300px;
   position: absolute;

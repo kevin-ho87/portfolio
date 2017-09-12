@@ -42,14 +42,12 @@ export default {
 @import "~assets/sass/base/settings";
 
 .home {
-  position: relative;
-  z-index: 1;
   display: flex;
   height: 100vh;
   overflow: hidden;
 
   &__title {
-    font-size: 2.2rem;
+    font-size: 3rem;
     margin-top: 0;
   }
 

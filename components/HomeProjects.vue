@@ -30,8 +30,8 @@ export default {
     projectsOver (e) {
       const projectRect = document.getElementById('home-projects').getBoundingClientRect()
 
-      let xPosTilt = e.layerX / projectRect.width * 50 - 25
-      let yPosTilt = e.layerY / projectRect.height * 50 - 25
+      let xPosTilt = e.layerX / projectRect.width * 100 - 50
+      let yPosTilt = e.layerY / projectRect.height * 100 - 50
 
       TweenLite.to('#home-projects', 0.7, {
         rotationY: 0.05 * xPosTilt,
@@ -40,7 +40,7 @@ export default {
     },
     projectsLeave () {
       TweenLite.to('#home-projects', 0.3, {
-        rotation: 0,
+        rotationY: 0,
         rotationX: 0,
         ease: Back.easeOut
       })
@@ -67,7 +67,6 @@ export default {
   width: 250px;
   height: 150px;
   flex: 1 1 50%;
-  padding: .8rem;
 
   &_nintendo {
     background-color: $c-nintendo;
@@ -84,8 +83,8 @@ export default {
 
   img {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 95%;
+    max-height: 95%;
   }
 }
 
