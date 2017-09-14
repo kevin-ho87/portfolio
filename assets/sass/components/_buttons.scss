@@ -1,0 +1,17 @@
+.btn {
+	border: 2px solid $primary-colour;
+	color: $primary-colour;
+	background-color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	font-weight: bold;
+	transition: background-color .3s ease-out,
+				color .3s ease-out;
+
+	&:hover {
+		color: #fff;
+		background-color: $primary-colour;
+	}
+}

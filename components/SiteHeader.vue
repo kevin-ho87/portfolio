@@ -110,9 +110,10 @@ export default {
   right: 2rem;
   border: 0;
   padding: 5px;
-  fill: #fff;
-  background-color: transparent;
   transition: all .3s ease-in-out;
+  //background-color: transparent;
+  background-color: #000;
+  fill: #fff;
 
   &:hover {
     background-color: #fff;

@@ -1,0 +1,48 @@
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+p {
+	line-height: 1.4;
+}
+
+//Project descripion section
+.row-project-desc {
+	padding-top: 8rem;
+	padding-bottom: 4rem;
+	background-color: #eee;
+}
+
+.col {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.col-main {
+	max-width: 50%;
+	flex: 0 0 50%;
+}
+.col-sub {
+	max-width: 25%;
+	flex: 0 0 25%;
+}
+
+.title-desc {
+	text-transform: uppercase;
+}
+
+//GIF holder
+.gif-holder {
+	justify-content: center;
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+}
+.sample-gif {
+	width: 640px;
+	height: 480px;
+	background-color: #eee;
+}
