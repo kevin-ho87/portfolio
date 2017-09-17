@@ -13,9 +13,8 @@ p {
 
 //Project descripion section
 .row-project-desc {
-	padding-top: 8rem;
-	padding-bottom: 4rem;
-	background-color: #eee;
+	padding-top: 12rem;
+	padding-bottom: 6rem;
 }
 
 .col {
@@ -37,12 +36,95 @@ p {
 
 //GIF holder
 .gif-holder {
-	justify-content: center;
-	padding-top: 8rem;
-	padding-bottom: 8rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	//background-color: $primary-colour;
+
+	.container {
+		// height: 100vh;
+		justify-content: center;
+		align-items: center;
+	}
 }
 .sample-gif {
 	width: 640px;
 	height: 480px;
-	background-color: #eee;
+	background-color: #ebebeb;
 }
+
+//Devices section
+.row-devices {
+	border-top: 1px solid green;
+}
+
+.devices-holder {
+	padding-top: 8rem;
+	padding-bottom: 2rem;
+	justify-content: center;
+	align-items: flex-end;
+
+	&__col {
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&_desktop {
+			max-width: 710px;
+			flex: 0 0 70%;
+		}
+
+		&_tablet {
+			max-width: 400px;
+			flex: 0 0 30%;
+		}
+	}
+}
+
+.device {
+	margin-bottom: 2rem;
+	box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+.devices-image-holder {
+	position: relative;
+
+	&__img:not(:first-of-type) {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+.resize {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+//Devices control
+.devices-control-holder {
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 8rem;
+}
+
+//Scrubber
+.scrubber {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	height: 10px;
+	border-radius: 5px;
+	margin-top: 2rem;
+	background-color: #444;
+
+	&__blob {
+		margin-top: -20px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: $primary-colour;
+	}
+}
+

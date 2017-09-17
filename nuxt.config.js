@@ -26,6 +26,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['gsap'],
     /*
     ** Run ESLINT on save
     */

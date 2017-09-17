@@ -31,22 +31,22 @@
       </div>
     </div>
 
-    <div class="gif-holder container">
-      <div class="sample-gif">
-        <span>animated GIF</span>
+    <div class="gif-holder">
+      <div class="container">
+        <div class="sample-gif ">
+          <span>animated GIF</span>
+        </div>
       </div>
     </div>
 
-    <div class="devices-holder container">
-      <div>
-        <svg viewBox="1564 2066 710 30" width="710" height="30"><path d="M1569 2066h700c2.76 0 5 2.24 5 5v25h-710v-25c0-2.76 2.24-5 5-5z" fill="#D1D1D1"/><path d="M2248.643 2081c0-3.022 2.435-5.476 5.434-5.476 2.998 0 5.433 2.454 5.433 5.476s-2.435 5.476-5.433 5.476c-3 0-5.434-2.454-5.434-5.476zM2230.53 2081c0-3.022 2.435-5.476 5.434-5.476 3 0 5.434 2.454 5.434 5.476s-2.435 5.476-5.434 5.476c-3 0-5.433-2.454-5.433-5.476zM2212.418 2081c0-3.022 2.435-5.476 5.434-5.476 3 0 5.434 2.454 5.434 5.476s-2.435 5.476-5.434 5.476c-3 0-5.434-2.454-5.434-5.476z" fill="#FFF"/></svg>
-      </div>
-    </div>
+    <ProjectSlider />
+
   </div>
 </template>
 
 <script>
-import { TweenLite } from 'gsap'
+import TweenLite from 'gsap'
+import ProjectSlider from '~/components/ProjectSlider'
 
 export default {
   data () {
@@ -55,7 +55,7 @@ export default {
     }
   },
   components: {
-
+    ProjectSlider
   },
   mounted () {
     TweenLite.set('.hero-shape', {
