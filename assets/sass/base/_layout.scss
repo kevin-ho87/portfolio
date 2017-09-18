@@ -55,45 +55,59 @@ p {
 //Devices section
 .row-devices {
 	border-top: 1px solid green;
+	padding-top: 8rem;
+	padding-bottom: 2rem;
 }
 
 .devices-holder {
-	padding-top: 8rem;
-	padding-bottom: 2rem;
+	position: relative;
+	max-width: 710px;
 	justify-content: center;
-	align-items: flex-end;
+	margin-bottom: 2rem;
+}
 
-	&__col {
-		padding-left: 20px;
-		padding-right: 20px;
+.device-group {
+	position: relative;
 
-		&_desktop {
-			max-width: 710px;
-			flex: 0 0 70%;
-		}
-
-		&_tablet {
-			max-width: 400px;
-			flex: 0 0 30%;
-		}
+	&:not(:first-child) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
+}
+
+.device-desktop {
+	max-width: 710px;
+	// opacity: 0;
+}
+
+.device-tablet {
+	max-width: 400px;
+}
+
+.device-mobile {
+	max-width: 260px;
+}
+
+.devices-portable-holder {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.device-col {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .device {
+	width: 100%;
 	margin-bottom: 2rem;
 	box-shadow: 0 10px 40px rgba(0,0,0,.2);
-}
-
-.devices-image-holder {
-	position: relative;
-
-	&__img:not(:first-of-type) {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
 }
 
 .resize {

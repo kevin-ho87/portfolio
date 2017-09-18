@@ -1,25 +1,47 @@
 <template>
   <div class="row-devices">
     <div class="devices-holder container">
-      <div class="devices-holder__col devices-holder__col_desktop">
-        <div class="device">
-          <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
-          <div class="devices-image-holder">
-            <img class="resize devices-image-holder__img device-desktop" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-desktop" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-desktop" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-desktop" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+      <div class="device-group">
+        <div class="device-col device-desktop">
+          <div class="device">
+            <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
+            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+          </div>
+        </div>
+        <div class="devices-portable-holder">
+          <div class="device-col">
+            <div class="device-mobile device">
+              <img class="resize" src="~assets/img/browser-mobile.svg" width="260" height="30" alt="">
+              <img class="resize" src="~assets/img/projects/mobile-nintendo-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="device-col">
+            <div class="device-tablet device">
+              <img class="resize" src="~assets/img/browser-tablet.svg" width="400" height="30" alt="">
+              <img class="resize" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
-      <div class="devices-holder__col devices-holder__col_tablet">
-        <div class="device">
-          <img class="resize" src="~assets/img/browser-tablet.svg" width="400" height="30" alt="">
-          <div class="devices-image-holder">
-            <img class="resize devices-image-holder__img device-tablet" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-tablet" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-tablet" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
-            <img class="resize devices-image-holder__img device-tablet" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
+      <div class="device-group">
+        <div class="device-col device-desktop">
+          <div class="device">
+            <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
+            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+          </div>
+        </div>
+        <div class="devices-portable-holder">
+          <div class="device-col">
+            <div class="device-mobile device">
+              <img class="resize" src="~assets/img/browser-mobile.svg" width="260" height="30" alt="">
+              <img class="resize" src="~assets/img/projects/mobile-nintendo-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="device-col">
+            <div class="device-tablet device">
+              <img class="resize" src="~assets/img/browser-tablet.svg" width="400" height="30" alt="">
+              <img class="resize" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -76,40 +98,71 @@ export default {
       })
     },
     slider () {
-      const spd = 1
-      const movement = 30
-      const staggerDuration = 5
+      // const spd = 1
+      // const movement = 30
+      // const staggerDuration = 5
 
       let $vm = this
+      let iterable = document.querySelectorAll('.device-group')
 
       this.tl = new TimelineLite({
         paused: $vm.isPaused
       })
 
-      this.tl.add('start')
+      iterable.forEach(element => {
+        let innerTl = new TimelineLite()
 
-      this.tl.staggerFromTo('.device-desktop:not(:first-of-type)', spd, {
-        x: movement,
+        innerTl.fromTo(element, 1, {
+          autoAlpha: 0,
+          scale: 0.9
+        }, {
+          autoAlpha: 1,
+          scale: 1,
+          ease: Circ.easeOut
+        })
+
+        this.tl.add(innerTl)
+      })
+
+      /* this.tl.fromTo('.device-desktop', 1, {
         autoAlpha: 0,
+        scale: 0.9
+      }, {
+        autoAlpha: 1,
+        scale: 1,
+        ease: Circ.easeOut
+      })
+
+      this.tl.add('devices')
+
+      this.tl.to('.device-desktop', 0.7, {
         scale: 0.9,
-        transformOrigin: '100% 50%'
-      }, {
-        x: 0,
-        autoAlpha: 1,
-        scale: 1,
-        ease: Circ.easeOut
-      }, staggerDuration, 'start')
-
-      this.tl.staggerFromTo('.device-tablet:not(:first-of-type)', spd, {
-        x: -movement,
         autoAlpha: 0,
-        scale: 1.1
-      }, {
-        x: 0,
-        autoAlpha: 1,
-        scale: 1,
         ease: Circ.easeOut
-      }, staggerDuration, 'start')
+      }, 'devices+=1')
+
+      this.tl.from('.device-mobile', 2, {
+        autoAlpha: 0,
+        scale: 0.7,
+        x: 50,
+        y: -50,
+        transformOrigin: 'right center',
+        ease: Back.easeOut
+      }, 'devices+=1')
+
+      this.tl.from('.device-tablet', 2.1, {
+        autoAlpha: 0,
+        scale: 0.7,
+        x: -50,
+        y: -50,
+        transformOrigin: 'left center',
+        ease: Back.easeOut
+      }, 'devices+=1')
+
+      this.tl.to('.devices-portable-holder', 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeOut
+      }, '+=1') */
 
       this.tl.eventCallback('onUpdate', () => {
         let theProgress = this.tl.progress()
