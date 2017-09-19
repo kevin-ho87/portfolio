@@ -54,7 +54,7 @@ p {
 
 //Devices section
 .row-devices {
-	border-top: 1px solid green;
+	//border-top: 1px solid green;
 	padding-top: 8rem;
 	padding-bottom: 2rem;
 }
@@ -73,12 +73,18 @@ p {
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		right: 0;
 	}
+}
+.closer-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .device-desktop {
 	max-width: 710px;
-	// opacity: 0;
 }
 
 .device-tablet {

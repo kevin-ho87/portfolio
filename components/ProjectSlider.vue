@@ -1,5 +1,5 @@
 <template>
-  <div class="row-devices">
+  <div id="row-devices" class="row-devices">
     <div class="devices-holder container">
       <div class="device-group">
         <div class="device-col device-desktop">
@@ -45,6 +45,14 @@
           </div>
         </div>
       </div>
+      <div class="closer-screen">
+        <div class="device-col device-desktop">
+          <div class="device">
+            <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
+            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+          </div>
+        </div>
+      </div>
     </div>
     <div class="devices-control-holder container">
       <button type="button" class="btn" v-if="isEnded" @click="replay">Replay</button>
@@ -57,7 +65,7 @@
 </template>
 
 <script>
-import { TweenMax, TimelineLite, Circ } from 'gsap'
+import { TweenMax, TimelineLite, Circ, Back } from 'gsap'
 
 export default {
   data () {
@@ -78,11 +86,19 @@ export default {
   },
   mounted () {
     if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
       this.createDraggable()
     }
     this.slider()
   },
   methods: {
+    handleScroll () {
+      const rowDeviceOffset = document.getElementById('row-devices').offsetTop
+      if (window.pageYOffset > rowDeviceOffset - (window.innerHeight / 2)) {
+        window.removeEventListener('scroll', this.handleScroll)
+        this.isPaused = false
+      }
+    },
     createDraggable () {
       let $vm = this
       const Draggable = require('gsap/Draggable')
@@ -98,71 +114,66 @@ export default {
       })
     },
     slider () {
-      // const spd = 1
-      // const movement = 30
-      // const staggerDuration = 5
-
-      let $vm = this
-      let iterable = document.querySelectorAll('.device-group')
+      const $vm = this
+      const iterable = document.querySelectorAll('.device-group')
 
       this.tl = new TimelineLite({
         paused: $vm.isPaused
       })
 
-      iterable.forEach(element => {
-        let innerTl = new TimelineLite()
+      for (let index = 0; index < iterable.length; index++) {
+        let desktop = iterable[index].querySelectorAll('.device-desktop')
+        let tablet = iterable[index].querySelectorAll('.device-tablet')
+        let mobile = iterable[index].querySelectorAll('.device-mobile')
+        let portables = iterable[index].querySelectorAll('.devices-portable-holder')
+        let delay = 2
 
-        innerTl.fromTo(element, 1, {
+        this.tl.fromTo(desktop, 1, {
           autoAlpha: 0,
           scale: 0.9
         }, {
           autoAlpha: 1,
           scale: 1,
           ease: Circ.easeOut
-        })
+        }, '-=0.3')
 
-        this.tl.add(innerTl)
-      })
+        this.tl.add('devices')
 
-      /* this.tl.fromTo('.device-desktop', 1, {
+        this.tl.to(desktop, 0.7, {
+          scale: 0.9,
+          autoAlpha: 0,
+          ease: Circ.easeOut
+        }, 'devices+=' + delay)
+
+        this.tl.from(mobile, 2, {
+          autoAlpha: 0,
+          scale: 0.7,
+          x: 50,
+          y: -50,
+          transformOrigin: 'right center',
+          ease: Back.easeOut
+        }, 'devices+=' + delay)
+
+        this.tl.from(tablet, 2.1, {
+          autoAlpha: 0,
+          scale: 0.7,
+          x: -50,
+          y: -50,
+          transformOrigin: 'left center',
+          ease: Back.easeOut
+        }, 'devices+=' + delay)
+
+        this.tl.to(portables, 0.7, {
+          autoAlpha: 0,
+          ease: Circ.easeOut
+        }, '+=' + delay)
+      }
+
+      this.tl.from('.closer-screen', 1, {
         autoAlpha: 0,
-        scale: 0.9
-      }, {
-        autoAlpha: 1,
-        scale: 1,
-        ease: Circ.easeOut
-      })
-
-      this.tl.add('devices')
-
-      this.tl.to('.device-desktop', 0.7, {
-        scale: 0.9,
-        autoAlpha: 0,
-        ease: Circ.easeOut
-      }, 'devices+=1')
-
-      this.tl.from('.device-mobile', 2, {
-        autoAlpha: 0,
-        scale: 0.7,
-        x: 50,
-        y: -50,
-        transformOrigin: 'right center',
+        scale: 1.1,
         ease: Back.easeOut
-      }, 'devices+=1')
-
-      this.tl.from('.device-tablet', 2.1, {
-        autoAlpha: 0,
-        scale: 0.7,
-        x: -50,
-        y: -50,
-        transformOrigin: 'left center',
-        ease: Back.easeOut
-      }, 'devices+=1')
-
-      this.tl.to('.devices-portable-holder', 0.7, {
-        autoAlpha: 0,
-        ease: Circ.easeOut
-      }, '+=1') */
+      }, '-=0.2')
 
       this.tl.eventCallback('onUpdate', () => {
         let theProgress = this.tl.progress()
