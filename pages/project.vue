@@ -16,30 +16,49 @@
 
     <div class="row-project-desc">
       <div class="container">
+        <div class="col">
+          <div class="project-desc-dash"></div>
+        </div>
+      </div>
+      <div class="container">
         <div class="col-sub col">
-          <h3 class="title-desc">Tech</h3>
-          <p>Greensock, jQuery, HTML5, CSS3</p>
+          <h3 class="title-desc">_Tech</h3>
+          <p class="desc">Greensock, jQuery, HTML5, CSS3</p>
         </div>
         <div class="col-sub col">
-          <h3 class="title-desc">Year</h3>
-          <p>2016</p>
+          <h3 class="title-desc">_Year</h3>
+          <p class="desc">2016</p>
         </div>
         <div class="col-main col">
-          <h3 class="title-desc">Info</h3>
-          <p>Front end. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum perferendis, hic quasi eos eligendi ea ad cumque commodi harum, quos impedit suscipit autem nostrum molestiae, sunt atque odit quisquam, quas.</p>
+          <h3 class="title-desc">_Info</h3>
+          <p class="desc">Front end. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum perferendis, hic quasi eos eligendi ea ad cumque commodi harum, quos impedit suscipit autem nostrum molestiae, sunt atque odit quisquam, quas.</p>
         </div>
       </div>
     </div>
 
     <div class="gif-holder">
       <div class="container">
-        <div class="sample-gif ">
-          <span>animated GIF</span>
+        <div class="gif-col">
+          <div class="sample-gif"></div>
+        </div>
+        <div class="gif-col">
+          <div class="sample-gif"></div>
+        </div>
+        <div class="gif-col">
+          <div class="sample-gif"></div>
+        </div>
+        <div class="gif-col">
+          <div class="sample-gif"></div>
+        </div>
+        <div class="gif-col">
+          <div class="sample-gif"></div>
         </div>
       </div>
     </div>
 
     <ProjectSlider />
+
+
 
   </div>
 </template>

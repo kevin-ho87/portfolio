@@ -13,8 +13,17 @@ p {
 
 //Project descripion section
 .row-project-desc {
-	padding-top: 12rem;
-	padding-bottom: 6rem;
+	// padding-top: 40vh;
+	padding-bottom: 20vh;
+	// background-color: #eee;
+}
+
+.project-desc-dash {
+	width: 50px;
+	height: 5px;
+	background-color: $primary-colour;
+	margin-top: 40vh;
+	margin-bottom: 20vh;
 }
 
 .col {
@@ -32,31 +41,55 @@ p {
 
 .title-desc {
 	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+.desc {
+	font-size: 1.2rem;
+	padding-left: .5rem;
 }
 
 //GIF holder
 .gif-holder {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	// background-color: #eee;
 	//background-color: $primary-colour;
 
 	.container {
 		// height: 100vh;
-		justify-content: center;
-		align-items: center;
 	}
 }
+
+.gif-col {
+	width: 50%;
+	padding: 10px;
+
+	&:nth-child(2n) {
+		margin-top: 15%;
+	}
+
+	&:nth-child(3n + 1) .sample-gif,
+	&:nth-child(5n) .sample-gif {
+		float: right;
+	}
+
+}
+
 .sample-gif {
-	width: 640px;
-	height: 480px;
-	background-color: #ebebeb;
+	width: 400px;
+	height: 400px;
+	background-color: #444;
+	margin-top: 2rem;
+	// background-color: $primary-colour;
+
 }
 
 //Devices section
 .row-devices {
 	//border-top: 1px solid green;
-	padding-top: 8rem;
-	padding-bottom: 2rem;
+	padding-top: 20vh;
+	padding-bottom: 20vh;
 }
 
 .devices-holder {
@@ -126,7 +159,6 @@ p {
 .devices-control-holder {
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: 8rem;
 }
 
 //Scrubber
@@ -136,7 +168,7 @@ p {
 	max-width: 500px;
 	height: 10px;
 	border-radius: 5px;
-	margin-top: 2rem;
+	margin-top: 4rem;
 	background-color: #444;
 
 	&__blob {
@@ -146,5 +178,13 @@ p {
 		border-radius: 50%;
 		background-color: $primary-colour;
 	}
+}
+
+// Project snippet
+.section-snippets {
+	background-color: #eee;
+	height: 100vh;
+	overflow: hidden;
+	cursor: grab;
 }
 
