@@ -1,8 +1,8 @@
 <template>
   <div id="home-projects" class="projects" @mousemove="projectsOver" @mouseleave="projectsLeave">
-    <a href="#" class="project project_nintendo">
+    <nuxt-link to="/project/nintendo" class="project project_nintendo">
       <img src="~assets/img/logo-nintendo.png" alt="">
-    </a>
+    </nuxt-link>
     <a href="#" class="project project_mind">
       <img src="~assets/img/logo-mind.png" alt="">
     </a>

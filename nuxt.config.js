@@ -41,6 +41,26 @@ module.exports = {
             mobile: 'mobile-nintendo-1.jpg'
           }
         ]
+      },
+      {
+        id: 2,
+        path: 'telstra',
+        title: 'Telstra exchange',
+        description: 'Lorem ipsum dolor sit amet.',
+        url: 'https://www.nintendo.com.au/yours-to-play/',
+        logo: 'nintendo-logo.png',
+        color: '#A0148C',
+        tech: 'Greensock, jQuery, HTML5, CSS3',
+        year: '2017',
+        info: 'Front end. lorem.',
+        gifs: ['desktop-nintendo-1.jpg', 'desktop-nintendo-1.jpg'],
+        screenshots: [
+          {
+            desktop: 'desktop-nintendo-1.jpg',
+            tablet: 'tablet-nintendo-1.jpg',
+            mobile: 'mobile-nintendo-1.jpg'
+          }
+        ]
       }
     ]
   },
@@ -51,6 +71,9 @@ module.exports = {
   css: [
     '@/assets/sass/main.scss'
   ],
+  router: {
+    middleware: 'menu'
+  },
 
   /*
   ** Build configuration

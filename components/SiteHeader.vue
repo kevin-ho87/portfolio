@@ -1,7 +1,7 @@
 <template>
   <header class="header" role="banner">
-    <a href="#" class="logo">K-Ho</a>
-    <button type="button" class="hamburger" @click="showMenu">
+    <nuxt-link to="/" class="logo">K-Ho</nuxt-link>
+    <button type="button" class="hamburger" @click="$store.commit('showMenu')">
       <svg viewBox="1369.79 44 28.08 21.6" width="28.08" height="21.6">
         <g><path d="M1369.79 44h28.08v4.32h-28.08zM1369.79 61.28h28.08v4.32h-28.08zM1369.79 52.64h28.08v4.32h-28.08z"/></g>
       </svg>
@@ -11,15 +11,17 @@
       @enter="enter"
       @leave="leave"
     >
-      <div class="menu-overlay-holder" v-show="isShowMenu">
-        <div class="menu-overlay" @click="hideMenu"></div>
+      <div class="menu-overlay-holder" v-show="$store.state.isShowMenu">
+        <div class="menu-overlay" @click="$store.commit('hideMenu')"></div>
         <div class="menu-angle"></div>
         <div class="menu-block">
-          <button type="button" class="menu-close" @click="hideMenu"><svg viewBox="1361 52 31 31" width="31" height="31"><path d="M1377.84 67.5l9.962 9.972-1.33 1.33-9.97-9.96-9.974 9.96-1.33-1.33 9.96-9.972-9.96-9.972 1.33-1.33 9.972 9.96 9.972-9.96 1.33 1.33-9.96 9.97v.002z"/><path fill="none" d="M1361 52h31v31h-31z"/></svg></button>
+          <button type="button" class="menu-close" @click="$store.commit('hideMenu')"><svg viewBox="1361 52 31 31" width="31" height="31"><path d="M1377.84 67.5l9.962 9.972-1.33 1.33-9.97-9.96-9.974 9.96-1.33-1.33 9.96-9.972-9.96-9.972 1.33-1.33 9.972 9.96 9.972-9.96 1.33 1.33-9.96 9.97v.002z"/><path fill="none" d="M1361 52h31v31h-31z"/></svg></button>
 
+          <h3 class="menu__category">Projects</h3>
           <nav class="menu">
-            <li class="menu__list"><span class="menu__category">Projects</span></li>
-            <li class="menu__list"><a href="" class="menu__link">Nintendo</a></li>
+            <li class="menu__list">
+              <nuxt-link to="/project/nintendo" class="menu__link">Nintendo</nuxt-link>
+            </li>
             <li class="menu__list"><a href="" class="menu__link">Mind</a></li>
             <li class="menu__list"><a href="" class="menu__link">Consumer Affairs Victoria</a></li>
             <li class="menu__list"><a href="" class="menu__link">Telstra</a></li>
@@ -48,16 +50,10 @@ import { TimelineLite, Circ } from 'gsap'
 export default {
   data () {
     return {
-      isShowMenu: false
+
     }
   },
   methods: {
-    showMenu () {
-      this.isShowMenu = true
-    },
-    hideMenu () {
-      this.isShowMenu = false
-    },
     enter (el, done) {
       this.tl = new TimelineLite({ onComplete: done })
 
