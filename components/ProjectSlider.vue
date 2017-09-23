@@ -1,55 +1,35 @@
 <template>
   <div id="row-devices" class="row-devices">
     <div class="devices-holder container">
-      <div class="device-group">
+
+      <div v-for="screenshot in screenshots" class="device-group">
         <div class="device-col device-desktop">
           <div class="device">
             <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
-            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+            <img class="resize" :src="`/img/${screenshot.desktop}`" alt="">
           </div>
         </div>
         <div class="devices-portable-holder">
           <div class="device-col">
             <div class="device-mobile device">
               <img class="resize" src="~assets/img/browser-mobile.svg" width="260" height="30" alt="">
-              <img class="resize" src="~assets/img/projects/mobile-nintendo-1.jpg" alt="">
+              <img class="resize" :src="`/img/${screenshot.mobile}`" alt="">
             </div>
           </div>
           <div class="device-col">
             <div class="device-tablet device">
               <img class="resize" src="~assets/img/browser-tablet.svg" width="400" height="30" alt="">
-              <img class="resize" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
+              <img class="resize" :src="`/img/${screenshot.tablet}`" alt="">
             </div>
           </div>
         </div>
       </div>
-      <div class="device-group">
-        <div class="device-col device-desktop">
-          <div class="device">
-            <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
-            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
-          </div>
-        </div>
-        <div class="devices-portable-holder">
-          <div class="device-col">
-            <div class="device-mobile device">
-              <img class="resize" src="~assets/img/browser-mobile.svg" width="260" height="30" alt="">
-              <img class="resize" src="~assets/img/projects/mobile-nintendo-1.jpg" alt="">
-            </div>
-          </div>
-          <div class="device-col">
-            <div class="device-tablet device">
-              <img class="resize" src="~assets/img/browser-tablet.svg" width="400" height="30" alt="">
-              <img class="resize" src="~assets/img/projects/tablet-nintendo-1.jpg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div class="closer-screen">
         <div class="device-col device-desktop">
           <div class="device">
             <img class="resize" src="~assets/img/browser-desktop.svg" width="710" height="30" alt="">
-            <img class="resize" src="~assets/img/projects/desktop-nintendo-1.jpg" alt="">
+            <img class="resize" :src="`/img/${screenshots[0].desktop}`" alt="">
           </div>
         </div>
       </div>
@@ -68,6 +48,7 @@
 import { TweenMax, TimelineLite, Circ, Back } from 'gsap'
 
 export default {
+  props: ['screenshots'],
   data () {
     return {
       isPaused: true,

@@ -3,14 +3,14 @@
     <div class="hero">
       <div class="hero__col hero__col_text">
         <div class="hero__text-box">
-          <h1 class="project-title">Yours to play</h1>
-          <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis repellat vel quas asperiores ut optio quaerat impedit.</p>
-          <a href="#" class="btn">Visit website</a>
+          <h1 class="project-title">{{ title }}</h1>
+          <p class="project-desc">{{ description }}</p>
+          <a :href="url" class="btn" target="_blank" rel="noopener">Visit website</a>
         </div>
       </div>
       <div class="hero__col hero__col_logo">
-        <div class="hero-shape"></div>
-        <img src="~assets/img/logo-nintendo.png" alt="" class="project-logo">
+        <div class="hero-shape" :style="{ backgroundColor: color }"></div>
+        <img :src="`/img/${logo}`" alt="" class="project-logo">
       </div>
     </div>
 
@@ -23,43 +23,28 @@
       <div class="container">
         <div class="col-sub col">
           <h3 class="title-desc">_Tech</h3>
-          <p class="desc">Greensock, jQuery, HTML5, CSS3</p>
+          <p class="desc">{{ tech }}</p>
         </div>
         <div class="col-sub col">
           <h3 class="title-desc">_Year</h3>
-          <p class="desc">2016</p>
+          <p class="desc">{{ year }}</p>
         </div>
         <div class="col-main col">
           <h3 class="title-desc">_Info</h3>
-          <p class="desc">Front end. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum perferendis, hic quasi eos eligendi ea ad cumque commodi harum, quos impedit suscipit autem nostrum molestiae, sunt atque odit quisquam, quas.</p>
+          <p class="desc">{{ info }}</p>
         </div>
       </div>
     </div>
 
     <div class="gif-holder">
       <div class="container">
-        <div class="gif-col">
-          <div class="sample-gif"></div>
-        </div>
-        <div class="gif-col">
-          <div class="sample-gif"></div>
-        </div>
-        <div class="gif-col">
-          <div class="sample-gif"></div>
-        </div>
-        <div class="gif-col">
-          <div class="sample-gif"></div>
-        </div>
-        <div class="gif-col">
-          <div class="sample-gif"></div>
+        <div v-for="gif in gifs" class="gif-col">
+          <img :src="`/img/${gif}`" alt="" class="sample-gif">
         </div>
       </div>
     </div>
 
-    <ProjectSlider />
-
-
-
+    <ProjectSlider :screenshots="screenshots" />
   </div>
 </template>
 
@@ -68,6 +53,13 @@ import TweenLite from 'gsap'
 import ProjectSlider from '~/components/ProjectSlider'
 
 export default {
+  asyncData ({ params, env, error }) {
+    const project = env.projects.find((project) => String(project.path) === params.id)
+    if (!project) {
+      return error({ message: 'project not found', statusCode: 404 })
+    }
+    return project
+  },
   data () {
     return {
 
@@ -130,7 +122,6 @@ export default {
   left: 0;
   width: 100%;
   height: 180%;
-  background-color: $c-nintendo;
 }
 
 .project-logo {
