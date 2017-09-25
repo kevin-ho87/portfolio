@@ -58,7 +58,12 @@ export default {
     if (!project) {
       return error({ message: 'project not found', statusCode: 404 })
     }
-    return project
+    return new Promise((resolve) => {
+      setTimeout(function () {
+        resolve(project)
+      }, 1000)
+    })
+    // return project
   },
   data () {
     return {

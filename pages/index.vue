@@ -21,6 +21,13 @@ import HomeProjects from '~/components/HomeProjects'
 import HomeRobotWorld from '~/components/HomeRobotWorld'
 
 export default {
+  asyncData () {
+    return new Promise((resolve) => {
+      setTimeout(function () {
+        resolve({})
+      }, 1000)
+    })
+  },
   data () {
     return {
       coords: {}
