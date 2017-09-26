@@ -22,19 +22,28 @@ p {
 	background-color: $primary-colour;
 	margin-top: 40vh;
 	margin-bottom: 20vh;
+	@media screen and (max-width: 800px) {
+		margin-top: 10rem;
+		margin-bottom: 5rem;
+	}
+	@media screen and (max-width: 520px) {
+		margin-top: 5rem;
+	}
 }
 
 .col {
 	padding-left: 20px;
 	padding-right: 20px;
 }
-.col-main {
-	max-width: 50%;
-	flex: 0 0 50%;
-}
-.col-sub {
-	max-width: 25%;
-	flex: 0 0 25%;
+@media screen and (min-width: 800px) {
+	.col-main {
+		max-width: 50%;
+		flex: 0 0 50%;
+	}
+	.col-sub {
+		max-width: 25%;
+		flex: 0 0 25%;
+	}
 }
 
 .title-desc {
@@ -54,11 +63,13 @@ p {
 }
 
 .gif-col {
-	width: 50%;
-	padding: 10px;
+	padding: 20px;
+	@media screen and (min-width: 520px) {
+		width: 50%;
 
-	&:nth-child(2n) {
-		margin-top: 15%;
+		&:nth-child(2n) {
+			margin-top: 15%;
+		}
 	}
 
 	&:nth-child(3n + 1) .sample-gif,
@@ -81,6 +92,10 @@ p {
 .row-devices {
 	padding-top: 20vh;
 	padding-bottom: 20vh;
+	@media screen and (max-width: 520px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 .devices-holder {
@@ -150,6 +165,10 @@ p {
 .devices-control-holder {
 	flex-direction: column;
 	align-items: center;
+	@media screen and (max-width: 520px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 //Scrubber

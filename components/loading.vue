@@ -1,5 +1,5 @@
 <template>
-  <transition name="gg">
+  <transition name="fade">
   <div class="loading-page" v-if="loading">
     <div class="holder">
       <div class="spinner">
@@ -23,9 +23,6 @@ export default {
     },
     finish () {
       this.loading = false
-    },
-    increase (num) {
-      console.log(num)
     }
   }
 }
@@ -34,10 +31,10 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/sass/base/settings";
 
-.gg-enter-active, .gg-leave-active {
+.fade-enter-active, .fade-leave-active {
   transition: opacity .5s ease-in-out;
 }
-.gg-enter, .gg-leave-active {
+.fade-enter, .fade-leave-active {
   opacity: 0;
 }
 

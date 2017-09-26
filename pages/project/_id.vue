@@ -58,12 +58,13 @@ export default {
     if (!project) {
       return error({ message: 'project not found', statusCode: 404 })
     }
-    return new Promise((resolve) => {
+    /* delay for preloader
+      return new Promise((resolve) => {
       setTimeout(function () {
         resolve(project)
       }, 1000)
-    })
-    // return project
+    }) */
+    return project
   },
   data () {
     return {
@@ -97,10 +98,12 @@ export default {
 
   &__col {
     flex: 1 1 50%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 
     &_text {
+      position: relative;
+      z-index: 1;
       padding-left: 6rem;
       padding-right: 2rem;
       display: flex;
@@ -121,6 +124,39 @@ export default {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .hero {
+    height: auto;
+  }
+  .hero__col {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .hero__col_text {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .hero {
+    flex-direction: column;
+  }
+  .hero__col {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero__col_text {
+    order: 1;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .hero__col_logo {
+    padding-bottom: 4rem;
+    overflow: hidden;
+  }
+}
+
 .hero-shape {
   position: absolute;
   bottom: 0;
@@ -137,6 +173,9 @@ export default {
 .project-title {
   font-size: 3rem;
   margin-top: 0;
+  @media screen and (max-width: 520px) {
+    font-size: 1.7rem;
+  }
 }
 
 .project-desc {

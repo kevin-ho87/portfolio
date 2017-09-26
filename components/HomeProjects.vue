@@ -64,9 +64,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
   height: 150px;
-  flex: 1 1 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 10px;
 
   &_nintendo {
     background-color: $c-nintendo;
@@ -83,8 +84,8 @@ export default {
 
   img {
     display: block;
-    max-width: 95%;
-    max-height: 95%;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 

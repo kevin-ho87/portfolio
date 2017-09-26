@@ -22,11 +22,12 @@ import HomeRobotWorld from '~/components/HomeRobotWorld'
 
 export default {
   asyncData () {
+    /* delay for preloader
     return new Promise((resolve) => {
       setTimeout(function () {
         resolve({})
       }, 1000)
-    })
+    }) */
   },
   data () {
     return {
@@ -63,6 +64,8 @@ export default {
   }
 
   &__col-text {
+    position: relative;
+    z-index: 1;
     flex: 1 1 40%;
     padding: 12rem 5rem 1.5rem;
   }
@@ -77,6 +80,41 @@ export default {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .home {
+    display: block;
+  }
+  .home__col-text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .home {
+    height: auto;
+  }
+  .home__col-text {
+    padding-top: 6rem;
+  }
+  .home__col-text,
+  .home__col-projects {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .home__title {
+    font-size: 1.7rem;
+  }
+  .home__desc {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .home {
+    height: auto;
+  }
+}
+
 .angle-shape {
   background-color: $primary-colour;
   position: absolute;
@@ -86,6 +124,14 @@ export default {
   height: 200%;
   transform-origin: 0 100%;
   transform: rotate(20deg);
+
+  @media screen and (max-width: 800px) {
+    transform: rotate(40deg);
+  }
+
+  @media screen and (max-height: 600px) {
+    display: none;
+  }
 }
 
 .content-holder {
