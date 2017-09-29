@@ -175,4 +175,100 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/sass/base/settings";
 
+//Devices section
+.row-devices {
+  overflow: hidden;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  @media screen and (max-width: 520px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.devices-holder {
+  position: relative;
+  max-width: 710px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.device-group {
+  position: relative;
+
+  &:not(:first-child) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+.closer-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.device-desktop {
+  max-width: 710px;
+}
+
+.device-tablet {
+  max-width: 400px;
+}
+
+.device-mobile {
+  max-width: 260px;
+}
+
+.devices-portable-holder {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.device-col {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.device {
+  width: 100%;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+//Devices control
+.devices-control-holder {
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: 520px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+//Scrubber
+.scrubber {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 4rem;
+  background-color: #444;
+
+  &__blob {
+    margin-top: -20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $primary-colour;
+  }
+}
 </style>

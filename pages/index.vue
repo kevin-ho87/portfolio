@@ -8,7 +8,9 @@
 
     <div class="home__col-projects">
       <div class="content-holder">
-        <HomeRobotWorld :coords="coords"></HomeRobotWorld>
+        <div class="robot-world-holder">
+          <HomeRobotWorld :coords="coords"></HomeRobotWorld>
+        </div>
         <div class="projects-holder">
           <HomeProjects></HomeProjects>
         </div>
@@ -24,13 +26,6 @@ import HomeProjects from '~/components/HomeProjects'
 import HomeRobotWorld from '~/components/HomeRobotWorld'
 
 export default {
-  transition: {
-    mode: 'out-in',
-    css: false,
-    enter (el, done) {
-      // let tl = new TimelineMax({ onComplete: done })
-    }
-  },
   mounted () {
     if (window.innerWidth <= 800) { return }
 
@@ -123,7 +118,8 @@ export default {
 @import "~assets/sass/base/settings";
 
 @media screen and (min-width: 801px) {
-  .projects-holder {
+  .projects-holder,
+  .robot-world-holder {
     opacity: 0;
   }
 }
@@ -211,7 +207,6 @@ export default {
   bottom: 0;
   width: 100%;
   height: 200%;
-  // transform: rotate(20deg);
 
   @media screen and (max-width: 800px) {
     left: 30%;

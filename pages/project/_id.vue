@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="hero">
+      <div class="hero-shape" :style="{ backgroundColor: color }"></div>
       <div class="hero__col hero__col_text">
         <div class="hero__text-box">
           <h1 class="project-title">{{ title }}</h1>
@@ -9,7 +10,6 @@
         </div>
       </div>
       <div class="hero__col hero__col_logo">
-        <div class="hero-shape" :style="{ backgroundColor: color }"></div>
         <img :src="`/img/${logo}`" alt="" class="project-logo">
       </div>
     </div>
@@ -49,10 +49,45 @@
 </template>
 
 <script>
-import TweenLite from 'gsap'
+import { TimelineMax, TweenLite, Circ, Back } from 'gsap'
 import ProjectSlider from '~/components/ProjectSlider'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      if (window.innerWidth <= 800) { return }
+      let tl = new TimelineMax({ delay: 2, onComplete: done })
+
+      TweenLite.set('.hero__text-box', { transformPerspective: 600 })
+
+      tl.add('movementStamp')
+      tl.from('.hero-shape', 0.7, {
+        x: '-50%',
+        transformOrigin: '0 100%',
+        rotation: 0,
+        ease: Back.easeOut
+      }, 'movementStamp')
+
+      tl.from('.hero__col_logo', 0.7, {
+        width: '100%',
+        ease: Back.easeOut
+      }, 'movementStamp')
+
+      tl.from('.project-logo', 0.7, {
+        x: -60,
+        ease: Back.easeOut
+      }, 'movementStamp')
+
+      tl.from('.hero__text-box', 0.7, {
+        x: 100,
+        autoAlpha: 0,
+        rotationY: 40,
+        ease: Circ.easeOut
+      }, '-=.4')
+    }
+  },
   asyncData ({ params, env, error }) {
     const project = env.projects.find((project) => String(project.path) === params.id)
     if (!project) {
@@ -66,24 +101,8 @@ export default {
     }) */
     return project
   },
-  data () {
-    return {
-
-    }
-  },
   components: {
     ProjectSlider
-  },
-  mounted () {
-    TweenLite.set('.hero-shape', {
-      rotation: 15,
-      transformOrigin: '0 100%'
-    })
-
-    TweenLite.set('.project-logo', {x: 60})
-  },
-  methods: {
-
   }
 }
 </script>
@@ -92,12 +111,12 @@ export default {
 @import "~assets/sass/base/settings";
 
 .hero {
+  position: relative;
   display: flex;
   height: 100vh;
   overflow: hidden;
 
   &__col {
-    flex: 1 1 50%;
     padding-top: 5rem;
     padding-bottom: 5rem;
 
@@ -111,10 +130,16 @@ export default {
     }
 
     &_logo {
-      position: relative;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      right: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      @media screen and (min-width: 521px) {
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
@@ -152,22 +177,36 @@ export default {
     padding-bottom: 4rem;
   }
   .hero__col_logo {
+    position: relative;
     padding-bottom: 4rem;
     overflow: hidden;
+    width: 100%;
   }
 }
 
 .hero-shape {
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
-  height: 180%;
+  height: 50%;
+  @media screen and (max-width: 520px) {
+    top: 0;
+  }
+  @media screen and (min-width: 521px) {
+    bottom: 0;
+    left: 50%;
+    height: 180%;
+    transform-origin: 0 100%;
+    transform: rotate(15deg);
+  }
 }
 
 .project-logo {
   position: relative;
   z-index: 2;
+  @media screen and (min-width: 521px) {
+    left: 60px;
+  }
 }
 
 .project-title {
@@ -181,5 +220,80 @@ export default {
 .project-desc {
   margin-bottom: 2rem;
 }
+
+//Project descripion section
+.row-project-desc {
+  padding-bottom: 20vh;
+}
+
+.project-desc-dash {
+  width: 50px;
+  height: 5px;
+  background-color: $primary-colour;
+  margin-top: 40vh;
+  margin-bottom: 20vh;
+  @media screen and (max-width: 800px) {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
+  @media screen and (max-width: 520px) {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .col-main {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+  .col-sub {
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
+}
+
+.title-desc {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.desc {
+  font-size: 1.2rem;
+  padding-left: .5rem;
+}
+
+//GIF holder
+.gif-holder {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.gif-col {
+  padding: 20px;
+  @media screen and (min-width: 520px) {
+    width: 50%;
+
+    &:nth-child(2n) {
+      margin-top: 15%;
+    }
+  }
+
+  &:nth-child(3n + 1) .sample-gif,
+  &:nth-child(5n) .sample-gif {
+    float: right;
+  }
+
+}
+
+.sample-gif {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background-color: #444;
+  margin-top: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+
 
 </style>
