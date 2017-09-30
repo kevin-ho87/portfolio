@@ -14,19 +14,19 @@
             <form action="" @submit.prevent="onSubmit">
               <div class="form-row">
                 <label>Name</label>
-                <input type="text" name="first_name" v-model="name">
+                <input type="text" name="first_name" :disabled="isDisabled" v-model="name">
                 <span v-if="name === '' && isSubmitted" class="required">This field is required</span>
               </div>
               <div class="form-row">
                 <label>Email</label>
-                <input type="text" name="email" v-model="email">
+                <input type="text" name="email" :disabled="isDisabled" v-model="email">
                 <span v-if="!emailValidate && isSubmitted" class="required">Please enter a valid email address</span>
               </div>
               <input id="last-name" type="text" name="last_name" v-model="honeypot">
 
               <div class="form-row">
                 <label>Message</label>
-                <textarea name="message" v-model="message"></textarea>
+                <textarea name="message" :disabled="isDisabled" v-model="message"></textarea>
                 <span v-if="message === '' && isSubmitted" class="required">This field is required</span>
               </div>
 
@@ -49,10 +49,47 @@
 </template>
 
 <script>
-import { TweenMax, Circ } from 'gsap'
+import { TimelineMax, TweenLite, Circ, Back } from 'gsap'
 import axios from 'axios'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      if (window.innerWidth <= 800) { return }
+      let tl = new TimelineMax({ onComplete: done })
+
+      TweenLite.set('.text-holder', { transformPerspective: 600 })
+
+      tl.from(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut })
+
+      tl.add('movementStamp')
+
+      tl.from('.text-holder', 0.7, {
+        x: 100,
+        autoAlpha: 0,
+        rotationY: 40,
+        ease: Circ.easeOut
+      }, 'movementStamp')
+
+      tl.from('.angle', 0.7, { rotation: 90, ease: Circ.easeInOut }, 'movementStamp')
+
+      tl.from('.form-box-holder', 0.7, {
+        autoAlpha: 0,
+        scale: 0.9,
+        y: -50,
+        ease: Circ.easeOut
+      }, '-=.1')
+    },
+    leave (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.staggerTo('.text-holder, .form-box-holder', 0.7, { y: -100, autoAlpha: 0, ease: Back.easeIn }, 0.1)
+
+      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
+    }
+  },
   data () {
     return {
       name: '',
@@ -72,8 +109,8 @@ export default {
   },
   mounted () {
     // Form flip settings
-    TweenMax.set('.form-success, .form-box', { transformPerspective: 800 })
-    TweenMax.set('.form-success', { autoAlpha: 1, rotationY: -180 })
+    TweenLite.set('.form-success, .form-box', { transformPerspective: 800 })
+    TweenLite.set('.form-success', { autoAlpha: 1, rotationY: -180 })
   },
   methods: {
     clearForm () {
@@ -98,11 +135,11 @@ export default {
           message: this.message
         }).then(response => {
           this.clearForm()
-          TweenMax.to('.form-box', 0.7, {
+          TweenLite.to('.form-box', 0.7, {
             rotationY: 180,
             ease: Circ.easeIn
           })
-          TweenMax.to('.form-success', 0.7, {
+          TweenLite.to('.form-success', 0.7, {
             rotationY: 0,
             ease: Circ.easeIn
           })
@@ -134,4 +171,159 @@ export default {
   display: inline-block;
   margin-left: 10px;
 }
+
+// Form
+.page-contact {
+  overflow: hidden;
+  height: 100vh;
+  background-color: #eee;
+
+  @media screen and (min-width: 801px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @media screen and (max-width: 520px) {
+    height: auto;
+  }
+
+  &__container {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    @media screen and (max-width: 800px) {
+      display: block;
+    }
+  }
+
+  &__col {
+    flex: 0 0 50%;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media screen and (max-width: 800px) {
+    &__col-text {
+      text-align: center;
+    }
+  }
+
+  &__col-form {
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.text-holder {
+  width: 100%;
+}
+
+.title-contact {
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 521px) {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 521px) {
+  .desc-contact {
+    font-size: 1.5rem;
+  }
+}
+
+.form-box-holder {
+  width: 100%;
+  position: relative;
+}
+
+.form-success {
+  opacity: 0;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5rem 1.5rem 1.5rem;
+  backface-visibility: hidden;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,
+    rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+
+  &__title {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+
+  &__desc {
+    margin-top: .5rem;
+    font-size: 1.4rem;
+  }
+}
+
+.form-box {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  backface-visibility: hidden;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,
+    rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+[type=text],
+[type=email],
+textarea {
+  padding: 1rem;
+  font-family: inherit;
+  border: 1px solid $primary-colour;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.required {
+  color: red;
+  font-size: .9rem;
+  margin-top: 5px;
+}
+
+#last-name {
+  display: none;
+}
+
+.btn-submit:disabled,
+.btn-submit[disabled] {
+  cursor: not-allowed;
+  border-color: #eee;
+  background-color: #eee;
+
+  &:hover {
+    color: $primary-colour;
+    border-color: #eee;
+    background-color: #eee;
+  }
+}
+
 </style>

@@ -14,7 +14,8 @@ button {
 	transition: background-color .3s ease-out,
 				color .3s ease-out;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: #fff;
 		background-color: $primary-colour;
 	}

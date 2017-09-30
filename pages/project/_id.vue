@@ -17,10 +17,10 @@
     <div class="row-project-desc">
       <div class="container">
         <div class="col">
-          <div class="project-desc-dash"></div>
+          <div class="project-desc-dash" v-scroll></div>
         </div>
       </div>
-      <div class="container">
+      <div class="container" v-scroll>
         <div class="col-sub col">
           <h3 class="title-desc">_Tech</h3>
           <p class="desc">{{ tech }}</p>
@@ -38,7 +38,7 @@
 
     <div class="gif-holder">
       <div class="container">
-        <div v-for="gif in gifs" class="gif-col">
+        <div v-for="gif in gifs" class="gif-col" v-scroll>
           <img :src="`/img/${gif}`" alt="" class="sample-gif">
         </div>
       </div>
@@ -51,6 +51,7 @@
 <script>
 import { TimelineMax, TweenLite, Circ, Back } from 'gsap'
 import ProjectSlider from '~/components/ProjectSlider'
+import scroll from '~/assets/scroll.js'
 
 export default {
   transition: {
@@ -58,27 +59,29 @@ export default {
     css: false,
     enter (el, done) {
       if (window.innerWidth <= 800) { return }
-      let tl = new TimelineMax({ delay: 2, onComplete: done })
+      let tl = new TimelineMax({ onComplete: done })
 
       TweenLite.set('.hero__text-box', { transformPerspective: 600 })
 
-      tl.add('movementStamp')
+      tl.from(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut })
+
+      tl.add('movementStamp+=1')
       tl.from('.hero-shape', 0.7, {
         x: '-50%',
         transformOrigin: '0 100%',
         rotation: 0,
         ease: Back.easeOut
-      }, 'movementStamp')
+      }, 'movementStamp+=1')
 
       tl.from('.hero__col_logo', 0.7, {
         width: '100%',
         ease: Back.easeOut
-      }, 'movementStamp')
+      }, 'movementStamp+=1')
 
       tl.from('.project-logo', 0.7, {
         x: -60,
         ease: Back.easeOut
-      }, 'movementStamp')
+      }, 'movementStamp+=1')
 
       tl.from('.hero__text-box', 0.7, {
         x: 100,
@@ -86,6 +89,17 @@ export default {
         rotationY: 40,
         ease: Circ.easeOut
       }, '-=.4')
+    },
+    leave (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.staggerTo('.hero__text-box, .project-logo', 0.7, {
+        y: -100,
+        autoAlpha: 0,
+        ease: Back.easeIn
+      }, 0.1)
+
+      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
     }
   },
   asyncData ({ params, env, error }) {
@@ -100,6 +114,9 @@ export default {
       }, 1000)
     }) */
     return project
+  },
+  directives: {
+    scroll: scroll
   },
   components: {
     ProjectSlider
@@ -250,16 +267,6 @@ export default {
     max-width: 25%;
     flex: 0 0 25%;
   }
-}
-
-.title-desc {
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-
-.desc {
-  font-size: 1.2rem;
-  padding-left: .5rem;
 }
 
 //GIF holder

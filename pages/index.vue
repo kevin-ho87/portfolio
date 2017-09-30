@@ -26,6 +26,25 @@ import HomeProjects from '~/components/HomeProjects'
 import HomeRobotWorld from '~/components/HomeRobotWorld'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      TweenMax.from(el, 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeOut,
+        onComplete: done
+      })
+    },
+    leave (el, done) {
+      TweenMax.staggerTo('.home__col-text, .content-holder', 0.7, {
+        y: -100,
+        autoAlpha: 0,
+        ease: Back.easeIn,
+        onComplete: done
+      }, 0.1)
+    }
+  },
   mounted () {
     if (window.innerWidth <= 800) { return }
 

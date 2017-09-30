@@ -30,153 +30,43 @@ p {
   padding-right: 20px;
 }
 
-// Form
-.page-contact {
-	overflow: hidden;
-	height: 100vh;
-	background-color: #eee;
-
-	@media screen and (min-width: 801px) {
-		padding-left: 5rem;
-		padding-right: 5rem;
-	}
-
-	@media screen and (max-width: 520px) {
-		height: auto;
-	}
-
-	&__container {
-		height: 100%;
-		position: relative;
-		z-index: 2;
-		@media screen and (max-width: 800px) {
-			display: block;
-		}
-	}
-
-	&__col {
-		flex: 0 0 50%;
-		display: flex;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	@media screen and (max-width: 800px) {
-		&__col-text {
-			text-align: center;
-		}
-	}
-
-	&__col-form {
-		align-items: center;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-	}
+.title-desc {
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
-.text-holder {
-	width: 100%;
+.desc {
+  font-size: 1.2rem;
+  padding-left: .5rem;
+
+  li {
+  	margin-bottom: 0.7rem;
+  }
 }
 
-.title-contact {
-	font-size: 6rem;
-	margin-top: 6rem;
-	margin-bottom: 1rem;
+ul {
+	list-style-type: none;
+	padding-left: 0;
 }
 
-.desc-contact {
-	font-size: 1.5rem;
+.level-2-title {
+	display: inline-block;
+	margin-bottom: 0.7rem;
 }
 
-.form-box-holder {
-	width: 100%;
-	position: relative;
+.level-2 {
+	padding-left: 2rem;
 }
 
-.form-success {
+// Transition class
+.scroll-fade {
 	opacity: 0;
-	background-color: #fff;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 5rem 1.5rem 1.5rem;
-	backface-visibility: hidden;
-	text-align: center;
-	border: 1px solid #ebebeb;
-	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,
-		rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+	transition: opacity 0.5s ease-in-out;
 
-	&__title {
-		font-size: 2.2rem;
-		margin-top: 0;
-		margin-bottom: .5rem;
-	}
-
-	&__desc {
-		margin-top: .5rem;
-		font-size: 1.4rem;
+	&_over {
+		opacity: 1;
 	}
 }
 
-.form-box {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #fff;
-	padding: 1.5rem;
-	width: 100%;
-	max-width: 500px;
-	backface-visibility: hidden;
-	border: 1px solid #ebebeb;
-	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,
-		rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-}
+// About
 
-.form-row {
-	margin-bottom: 1rem;
-}
-
-label {
-	display: block;
-	font-weight: bold;
-	margin-bottom: .5rem;
-}
-
-[type=text],
-[type=email],
-textarea {
-	padding: 1rem;
-	font-family: inherit;
-	border: 1px solid $primary-colour;
-	width: 100%;
-}
-
-textarea {
-	resize: vertical;
-	height: 150px;
-}
-
-.required {
-	color: red;
-	font-size: .9rem;
-	margin-top: 5px;
-}
-
-#last-name {
-	display: none;
-}
-
-.btn-submit:disabled,
-.btn-submit[disabled] {
-	cursor: not-allowed;
-	border-color: #eee;
-	background-color: #eee;
-
-	&:hover {
-		color: $primary-colour;
-		border-color: #eee;
-		background-color: #eee;
-	}
-}
