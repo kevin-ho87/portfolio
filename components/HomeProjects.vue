@@ -3,15 +3,15 @@
     <nuxt-link to="/project/nintendo" class="project project_nintendo">
       <img src="~assets/img/logo-nintendo.png" alt="">
     </nuxt-link>
-    <a href="#" class="project project_mind">
+    <nuxt-link to="/project/mind" class="project project_mind">
       <img src="~assets/img/logo-mind.png" alt="">
-    </a>
-    <a href="#" class="project project_cav">
+    </nuxt-link>
+    <nuxt-link to="/project/cav" class="project project_cav">
       <img src="~assets/img/logo-cav.png" alt="">
-    </a>
-    <a href="#" class="project project_telstra">
+    </nuxt-link>
+    <nuxt-link to="/project/telstra" class="project project_telstra">
       <img src="~assets/img/logo-telstra.png" alt="">
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
@@ -68,25 +68,6 @@ export default {
   flex: 0 0 50%;
   max-width: 50%;
   padding: 10px;
-
-  &_nintendo {
-    background-color: $c-nintendo;
-  }
-  &_mind {
-    background-color: $c-mind;
-  }
-  &_cav {
-    background-color: $c-cav;
-  }
-  &_telstra {
-    background-color: $c-telstra;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-  }
 }
 
 </style>

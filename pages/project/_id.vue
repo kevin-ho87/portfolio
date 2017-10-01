@@ -46,12 +46,16 @@
     </div>
 
     <ProjectSlider :screenshots="screenshots" />
+
+    <OtherProjects v-scroll />
+
   </div>
 </template>
 
 <script>
 import { TimelineMax, TweenLite, Circ, Back } from 'gsap'
 import ProjectSlider from '~/components/ProjectSlider'
+import OtherProjects from '~/components/OtherProjects'
 import scroll from '~/assets/scroll.js'
 
 export default {
@@ -118,11 +122,16 @@ export default {
     }) */
     return project
   },
+  scrollToTop: true,
   directives: {
     scroll: scroll
   },
   components: {
-    ProjectSlider
+    ProjectSlider,
+    OtherProjects
+  },
+  mounted () {
+    window.scroll(0, 0)
   }
 }
 </script>
@@ -174,9 +183,6 @@ export default {
   position: absolute;
   bottom: 0;
   left: 45%;
-  // right: 0;
-  // margin-left: auto;
-  // margin-right: auto;
   fill: $primary-colour;
   width: 60px;
   height: 70px;

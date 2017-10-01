@@ -178,8 +178,8 @@ export default {
 //Devices section
 .row-devices {
   overflow: hidden;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   @media screen and (max-width: 520px) {
     padding-left: 10px;
     padding-right: 10px;

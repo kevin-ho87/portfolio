@@ -86,12 +86,14 @@
       <div class="placeholder-img"></div>
     </div>
   </div>
+  <OtherProjects v-scroll />
 </div>
 </template>
 
 <script>
 import scroll from '~/assets/scroll.js'
 import { TweenMax, Circ } from 'gsap'
+import OtherProjects from '~/components/OtherProjects'
 
 export default {
   transition: {
@@ -105,8 +107,15 @@ export default {
       })
     }
   },
+  scrollToTop: true,
   directives: {
     scroll: scroll
+  },
+  components: {
+    OtherProjects
+  },
+  mounted () {
+    window.scroll(0, 0)
   }
 }
 </script>
