@@ -12,6 +12,7 @@
       <div class="hero__col hero__col_logo">
         <img :src="`/img/${logo}`" alt="" class="project-logo">
       </div>
+      <svg class="scroll-down" viewBox="0 0 100 125"><path d="M56.6 79.6L50 86.2l-6.6-6.6c-.8-.8-2-.8-2.8 0s-.8 2 0 2.8l8 8c.4.4.9.6 1.4.6s1-.2 1.4-.6l8-8c.8-.8.8-2 0-2.8s-2-.8-2.8 0z"/><path d="M59.4 68.6c-.8-.8-2-.8-2.8 0L50 75.2l-6.6-6.6c-.8-.8-2-.8-2.8 0s-.8 2 0 2.8l8 8c.4.4.9.6 1.4.6s1-.2 1.4-.6l8-8c.8-.8.8-2 0-2.8zM68 45V27c0-9.9-8.1-18-18-18s-18 8.1-18 18v18c0 9.9 8.1 18 18 18s18-8.1 18-18zM50 59c-7.7 0-14-6.3-14-14V27c0-7.7 6.3-14 14-14s14 6.3 14 14v18c0 7.7-6.3 14-14 14z"/><path d="M50 20c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2s2-.9 2-2v-6c0-1.1-.9-2-2-2z"/></svg>
     </div>
 
     <div class="row-project-desc">
@@ -89,11 +90,13 @@ export default {
         rotationY: 40,
         ease: Circ.easeOut
       }, '-=.4')
+
+      tl.from('.scroll-down', 0.7, { y: -20, autoAlpha: 0, ease: Back.easeOut }, '-=.1')
     },
     leave (el, done) {
       let tl = new TimelineMax({ onComplete: done })
 
-      tl.staggerTo('.hero__text-box, .project-logo', 0.7, {
+      tl.staggerTo('.hero__text-box, .project-logo, .scroll-down', 0.7, {
         y: -100,
         autoAlpha: 0,
         ease: Back.easeIn
@@ -163,6 +166,22 @@ export default {
   &__text-box {
     width: 100%;
     max-width: 400px;
+  }
+}
+
+.scroll-down {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  // right: 0;
+  // margin-left: auto;
+  // margin-right: auto;
+  fill: $primary-colour;
+  width: 60px;
+  height: 70px;
+  @media screen and (max-width: 800px) {
+    display: none;
   }
 }
 
