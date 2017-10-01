@@ -37,12 +37,15 @@ export default {
       })
     },
     leave (el, done) {
-      TweenMax.staggerTo('.home__col-text, .content-holder', 0.7, {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.staggerTo('.home__col-text, .content-holder', 0.7, {
         y: -100,
         autoAlpha: 0,
-        ease: Back.easeIn,
-        onComplete: done
+        ease: Back.easeIn
       }, 0.1)
+
+      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
     }
   },
   mounted () {
