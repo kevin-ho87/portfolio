@@ -8,7 +8,7 @@
   </div>
   <div class="row-about container">
     <div class="col-about col">
-      <h3 class="title-desc">_Web</h3>
+      <h3 class="title-desc">_Tech</h3>
       <ul class="desc">
         <li>Responsive web design</li>
         <li>Cross browser development</li>
@@ -38,7 +38,7 @@
       </ul>
     </div>
     <div class="col-about col">
-      <h3 class="title-desc">_Software</h3>
+      <h3 class="title-desc">_Tools</h3>
       <ul class="desc">
         <li>Photoshop</li>
         <li>Illustrator</li>
@@ -46,7 +46,7 @@
         <li>Avocode</li>
         <li>Gravit Designer</li>
         <li>GIT, Sourcetree, SVN, GitHub</li>
-
+        <li>JIRA</li>
       </ul>
     </div>
     <div class="col-about col">
