@@ -28,7 +28,7 @@ module.exports = {
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2016',
         info: 'Front end. lorem.',
-        gifs: ['nintendo-1.gif', 'nintendo-2.gif', 'nintendo-3.gif'],
+        gifs: ['nintendo-1.gif', 'nintendo-4.jpg', 'nintendo-2.gif', 'nintendo-3.gif', 'nintendo-5.gif'],
         screenshots: [
           {
             desktop: 'desktop-nintendo-1.jpg',
@@ -47,13 +47,13 @@ module.exports = {
         path: 'mind',
         title: 'Mind Australia',
         description: 'Lorem ipsum dolor sit amet.',
-        url: 'https://www.nintendo.com.au/yours-to-play/',
+        url: 'https://www.mindaustralia.org.au/',
         logo: 'nintendo-logo.png',
         color: '#A0148C',
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2017',
         info: 'Front end. lorem.',
-        gifs: ['desktop-mind-1.jpg', 'desktop-mind-2.jpg'],
+        gifs: ['mind-1.gif', 'mind-3.jpg', 'mind-2.gif', 'mind-4.gif'],
         screenshots: [
           {
             desktop: 'desktop-mind-1.jpg',
@@ -72,13 +72,13 @@ module.exports = {
         path: 'cav',
         title: 'Party for your rights',
         description: 'Lorem ipsum dolor sit amet.',
-        url: 'https://www.nintendo.com.au/yours-to-play/',
+        url: 'http://partyforyourrights.vic.gov.au/',
         logo: 'nintendo-logo.png',
         color: '#A0148C',
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2017',
         info: 'Front end. lorem.',
-        gifs: ['desktop-cav-1.jpg', 'desktop-cav-2.jpg'],
+        gifs: ['cav-1.gif', 'cav-2.jpg', 'cav-3.jpg', 'cav-4.gif', 'cav-5.gif'],
         screenshots: [
           {
             desktop: 'desktop-cav-1.jpg',
@@ -97,13 +97,13 @@ module.exports = {
         path: 'telstra',
         title: 'Telstra exchange',
         description: 'Lorem ipsum dolor sit amet.',
-        url: 'https://www.nintendo.com.au/yours-to-play/',
+        url: 'https://exchange.telstra.com.au/',
         logo: 'nintendo-logo.png',
         color: '#A0148C',
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2017',
         info: 'Front end. lorem.',
-        gifs: ['desktop-telstra-1.jpg', 'desktop-telstra-2.jpg'],
+        gifs: ['telstra-1.gif', 'telstra-2.jpg', 'telstra-3.jpg'],
         screenshots: [
           {
             desktop: 'desktop-telstra-1.jpg',
