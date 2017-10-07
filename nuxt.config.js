@@ -28,7 +28,7 @@ module.exports = {
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2016',
         info: 'Front end. lorem.',
-        gifs: ['desktop-nintendo-1.jpg', 'desktop-nintendo-1.jpg', 'desktop-nintendo-1.jpg', 'desktop-nintendo-1.jpg', 'desktop-nintendo-1.jpg'],
+        gifs: ['nintendo-1.gif', 'nintendo-2.gif', 'nintendo-3.gif'],
         screenshots: [
           {
             desktop: 'desktop-nintendo-1.jpg',
