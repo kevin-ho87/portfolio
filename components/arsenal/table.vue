@@ -72,6 +72,7 @@ td {
 }
 th {
   text-align: left;
+  cursor: pointer;
 }
 
 .arrow {

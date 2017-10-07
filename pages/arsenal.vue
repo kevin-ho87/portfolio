@@ -11,12 +11,10 @@
       </div>
     </div>
   </div>
-  <div class="page">
+  <div class="page page-jersey">
     <div class="container">
-      <div class="col">
-        <h3>Jersey drag reveal</h3>
-        <img src="~/assets/img/arsenal/jersey-home.jpg" alt="" class="jersey-resize">
-        <img src="~/assets/img/arsenal/jersey-away.jpg" alt="" class="jersey-resize">
+      <div class="page-jersey__col col">
+        <jersey></jersey>
       </div>
     </div>
   </div>
@@ -47,10 +45,12 @@
 </template>
 
 <script>
+import jersey from '~/components/arsenal/jersey'
 import playersTable from '~/components/arsenal/table'
 
 export default {
   components: {
+    jersey,
     playersTable
   },
   data () {
@@ -91,11 +91,12 @@ $c-secondary: #172030;
   }
 }
 
-// Jersey
-.jersey-resize {
-  width: 50%;
-  height: auto;
+.page-jersey {
+  &__col {
+    width: 100%;
+  }
 }
+
 
 
 
