@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" mode="out-in">
   <div class="loading-page" v-if="loading">
     <div class="holder">
       <div class="spinner">
