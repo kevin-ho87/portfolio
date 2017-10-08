@@ -1,14 +1,9 @@
 <template>
-  <div>
-    <h3>Jersey drag reveal</h3>
-
-    <div id="jersey-holder" class="jersey-holder">
-      <img src="~/assets/img/arsenal/jersey-home.jpg" alt="" class="jersey-resize jersey-home" :style="maskX">
-      <img src="~/assets/img/arsenal/jersey-away.jpg" alt="" class="jersey-resize">
-      <div class="drag-overlay"></div>
-      <div class="drag-item"></div>
-    </div>
-
+  <div id="jersey-holder" class="jersey-holder">
+    <img src="~/assets/img/arsenal/jersey-home.jpg" alt="" class="jersey-resize jersey-home" :style="maskX">
+    <img src="~/assets/img/arsenal/jersey-away.jpg" alt="" class="jersey-resize">
+    <div class="drag-overlay"></div>
+    <div class="drag-item"></div>
   </div>
 </template>
 
@@ -66,13 +61,10 @@ export default {
 .jersey-resize {
   width: 100%;
   height: auto;
-  // width: 400px;
-  // height: 400px;
 }
 .jersey-home {
   position: absolute;
   display: block;
-  // clip: rect(0px, 200px, 400px, 0px);
 }
 
 .drag-overlay {
@@ -87,11 +79,12 @@ export default {
 .drag-item {
   width: 20px;
   height: 100px;
-  background-color: #444;
+  background-color: #fff;
   position: absolute;
   top: calc(50% - 50px);
   left: calc(50% - 10px);
   z-index: 3;
+  border: 3px solid #f00000;
   border-radius: 5px;
   cursor: pointer;
 }
