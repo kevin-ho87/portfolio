@@ -81,9 +81,13 @@ export default {
         y: -50,
         ease: Circ.easeOut
       }, '-=.1')
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
     },
     leave (el, done) {
       let tl = new TimelineMax({ onComplete: done })
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 1 }, { autoAlpha: 0, ease: Circ.easeOut })
 
       tl.staggerTo('.text-holder, .form-box-holder', 0.7, { y: -100, autoAlpha: 0, ease: Back.easeIn }, 0.1)
 

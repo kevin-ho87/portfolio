@@ -96,9 +96,13 @@ export default {
       }, '-=.4')
 
       tl.from('.scroll-down', 0.7, { y: -20, autoAlpha: 0, ease: Back.easeOut }, '-=.1')
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
     },
     leave (el, done) {
       let tl = new TimelineMax({ onComplete: done })
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 1 }, { autoAlpha: 0, ease: Circ.easeOut })
 
       tl.staggerTo('.hero__text-box, .project-logo, .scroll-down', 0.7, {
         y: -100,

@@ -39,13 +39,13 @@ export default {
     leave (el, done) {
       let tl = new TimelineMax({ onComplete: done })
 
+      tl.to('.header', 0.3, { autoAlpha: 0 })
+
       tl.staggerTo('.home__col-text, .content-holder', 0.7, {
         y: -100,
         autoAlpha: 0,
         ease: Back.easeIn
       }, 0.1)
-
-      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
     }
   },
   mounted () {
@@ -104,7 +104,7 @@ export default {
       ease: Circ.easeOut
     }, 'movementStamp+=1.5')
 
-    tl.from('.header', 0.3, { autoAlpha: 0 })
+    tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
 
     tl.to('.home__col-projects', 0.7, {
       rotationY: 0,

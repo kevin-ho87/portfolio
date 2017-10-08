@@ -42,11 +42,14 @@
       <ul class="desc">
         <li>Photoshop</li>
         <li>Illustrator</li>
+        <li>InDesign</li>
+        <li>Flash</li>
         <li>Sublime text</li>
         <li>Avocode</li>
         <li>Gravit Designer</li>
-        <li>GIT, Sourcetree, SVN, GitHub</li>
-        <li>JIRA</li>
+        <li>GIT, SVN</li>
+        <li>Sourcetree, GitHub</li>
+        <li>JIRA, Slack, BitBucket</li>
       </ul>
     </div>
     <div class="col-about col">
@@ -54,6 +57,7 @@
       <ul class="desc">
         <li>SEO</li>
         <li>Banner ads</li>
+        <li>Backbone</li>
         <li>Silverstripe, Magento, Wordpress, Drupal</li>
         <li>ASP VBScript, PHP, SQL, MySQL</li>
       </ul>
@@ -105,6 +109,17 @@ export default {
         ease: Circ.easeOut,
         onComplete: done
       })
+
+      TweenMax.to('.header', 0.3, { autoAlpha: 1, ease: Circ.easeOut })
+    },
+    leave (el, done) {
+      TweenMax.to(el, 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeOut,
+        onComplete: done
+      })
+
+      TweenMax.to('.header', 0.3, { autoAlpha: 0, ease: Circ.easeOut })
     }
   },
   scrollToTop: true,
