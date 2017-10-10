@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="page-arsenal">
   <div class="page page-hero">
     <div class="container">
       <div class="col">
@@ -23,8 +23,8 @@
   <div class="page page-jersey">
     <div class="container">
       <div class="col">
-        <h3 class="title-section">The shirt</h3>
-        <p>Drag to reveal home/away jersey</p>
+        <h3 class="title-section">The 2017/18 kit</h3>
+        <p>Slide to reveal home/away jersey</p>
         <div class="jersey-row">
           <p class="jersey-row__label">Home</p>
           <jersey></jersey>
@@ -34,11 +34,11 @@
     </div>
   </div>
 
-  <div class="page">
+  <div class="page page-honours">
     <div class="container">
       <div class="col">
-        <h3>Honours</h3>
-        <p>https://www.arsenal.com/first-team/honours</p>
+        <h3 class="title-section">Honours</h3>
+        <!-- <p>https://www.arsenal.com/first-team/honours</p> -->
         <h4>13 LEAGUE CHAMPIONS</h4>
         <p>1930/31, 1932/33, 1933/34, 1934/35, 1937/38, 1947/48, 1952/53, 1970/71, 1988/89, 1990/91, 1997/98, 2001/02, 2003/04</p>
         <h4>13 FA CUPS</h4>
@@ -49,14 +49,21 @@
   <div class="page">
     <div class="container">
       <div class="col">
-        <h3>Players</h3>
-        <h4>Sortable list of current preferred first team</h4>
+        <h3 class="title-section">Team lineup</h3>
+        <p class="desc-lineup">My preffered selection for the 2017/18 starting lineup. Giroud and Lacazette up front just like the French national team. They are then supported by the creative trio of Ozil, Sanchez, and Cazorla.</p>
         <playersTable :stats="stats" :players="currentPlayers" />
-        <h4>Dream team players</h4>
-        <playersTable :stats="stats" :players="dreamTeamPlayers" />
+        <!-- <h4>Dream team players</h4> -->
+        <!-- <playersTable :stats="stats" :players="dreamTeamPlayers" /> -->
       </div>
     </div>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="col">
+        <p>All content referenced from https://www.arsenal.com/</p>
+      </div>
+    </div>
+  </footer>
 </div>
 </template>
 
@@ -106,17 +113,20 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/sass/base/settings";
 
-$c-primary: #a22b2b;
-$c-secondary: #172030;
-// #f00000
+.page-arsenal {
+  display: flex;
+  flex-direction: column;
+}
 
 .page {
-  height: 100vh;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  flex: 1 0 auto;
+  min-height: 100vh;
+  display: flex;
 
   .container {
-    height: 100%;
+    min-height: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .col {
@@ -135,23 +145,24 @@ $c-secondary: #172030;
 
 // Hero
 .page-hero {
-  background-color: $c-primary;
+  background-color: $c-arsenal-primary;
   text-align: center;
   color: #fff;
 
   &__title {
-    font-size: 6rem;
     margin: 1rem 0;
+    @media screen and (max-width: 520px) {
+      font-size: 3rem;
+    }
+    @media screen and (min-width: 521px) {
+      font-size: 6rem;
+    }
   }
 }
 
 // Shield
 .page-shield {
-  background-color: $c-primary;
-
-  .container {
-    height: 100%;
-  }
+  background-color: $c-arsenal-secondary;
 }
 
 .shield {
@@ -176,10 +187,43 @@ $c-secondary: #172030;
 
   &__label {
     font-weight: bold;
-    margin: 2rem;
+    color: #eee;
+    @media screen and (min-width: 801px) {
+      font-size: calc(4vw + 4vh + 2vmin);
+    }
   }
 }
 
+// Honours
+.page-honours {
+  background-color: $c-arsenal-primary;
+  background-image: url('https://www.arsenal.com/sites/default/files/styles/large/public/images/facup_2017.jpg?itok=63FFZqUu');
+  background-repeat: no-repeat;
+  background-origin: 50% 50%;
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #fff;
+  text-align: center;
+}
 
+// Lineup
+.desc-lineup {
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 750px;
+}
+
+// Footer
+.footer {
+  background-color: #eee;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: .8rem;
+  text-align: center;
+
+  .col {
+    width: 100%;
+  }
+}
 
 </style>

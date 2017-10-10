@@ -56,7 +56,8 @@ export default {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 .jersey-resize {
   width: 100%;

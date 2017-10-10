@@ -59,20 +59,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~assets/sass/base/settings";
 
 // Table
 table {
+  width: 100%;
+  max-width: 800px;
   border-collapse: collapse;
   border-spacing: 0;
 }
 th,
 td {
-  border: 1px solid #444;
-  padding: .5rem;
+  border: 2px solid #fff;
+  padding: 1rem;
 }
 th {
   text-align: left;
   cursor: pointer;
+  background-color: $c-arsenal-secondary;
+  color: #fff;
+}
+td {
+  background-color: #ececec;
 }
 
 .arrow {
@@ -86,13 +94,13 @@ th {
 .arrow.asc {
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-bottom: 4px solid #000;
+  border-bottom: 4px solid #fff;
 }
 
 .arrow.dsc {
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 4px solid #000;
+  border-top: 4px solid #fff;
 }
 
 </style>
