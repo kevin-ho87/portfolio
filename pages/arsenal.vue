@@ -68,10 +68,33 @@
 </template>
 
 <script>
+import { TweenMax, Circ } from 'gsap'
 import jersey from '~/components/arsenal/jersey'
 import playersTable from '~/components/arsenal/table'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      TweenMax.from(el, 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeOut,
+        onComplete: done
+      })
+
+      TweenMax.to('.header', 0.3, { autoAlpha: 1, ease: Circ.easeOut })
+    },
+    leave (el, done) {
+      TweenMax.to(el, 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeOut,
+        onComplete: done
+      })
+
+      TweenMax.to('.header', 0.3, { autoAlpha: 0, ease: Circ.easeOut })
+    }
+  },
   components: {
     jersey,
     playersTable
