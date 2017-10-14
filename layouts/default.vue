@@ -1,7 +1,9 @@
 <template>
   <div>
     <SiteHeader />
-    <nuxt class="site-holder"/>
+    <div class="site-holder">
+      <nuxt />
+    </div>
   </div>
 </template>
 
