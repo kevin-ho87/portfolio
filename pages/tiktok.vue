@@ -1,8 +1,6 @@
 <template>
   <div class="page-tiktok">
 
-
-
     <div class="row row-hero">
       <div class="container">
         <div class="col row-hero__col-main">
@@ -11,24 +9,26 @@
         <div class="col row-hero__col-text">
           <p>Tribute to the greatest tools of time, watches. Here are my choices for your everyday beater chronograph watch, haute horology, and dress watch.</p>
         </div>
-
       </div>
     </div>
 
-    <div class="hero-watch">
+    <div class="hero-watch fade-change">
       <img :src="selectedModel.heroImage" alt="">
     </div>
 
-    <div class="row row-watch-cta">
-      <label v-for="watch in watches" class="watch-select">
-        <input class="watch-select__label" type="radio" v-model="selectedWatch" :value="watch.model">
-        <span class="watch-select__inner" :style="{ backgroundImage: `url('${watch.heroImage}')` }">
-          <span class="watch-select__brand">{{ watch.brand }}</span>
-          <span class="watch-select__name">{{ watch.model }}</span>
-        </span>
-      </label>
+    <div class="row-watch-cta-holder">
+      <div id="ctas" class="row row-watch-cta" :class="{ 'row-watch-cta_over': isCtasSticky}">
+        <div class="container">
+          <label v-for="watch in watches" class="watch-select">
+            <input class="watch-select__label" type="radio" v-model="selectedWatch" :value="watch.model">
+            <span class="watch-select__inner" :style="{ backgroundImage: `url('${watch.heroImage}')` }">
+              <span class="watch-select__brand">{{ watch.brand }}</span>
+              <span class="watch-select__name">{{ watch.model }}</span>
+            </span>
+          </label>
+        </div>
+      </div>
     </div>
-
 
     <div class="row row-details">
       <div class="container">
@@ -51,7 +51,7 @@
     </div>
     <div class="row">
       <div class="grid">
-        <div class="img-box" v-for="imgSrc in selectedModel.images">
+        <div class="img-box fade-change" v-for="imgSrc in selectedModel.images">
           <img :src="imgSrc" alt="">
         </div>
       </div>
@@ -76,10 +76,12 @@
 
 <script>
 import _ from 'lodash'
+import { TweenMax, Circ } from 'gsap'
 
 export default {
   data () {
     return {
+      isCtasSticky: false,
       selectedWatch: 'alaska project',
       watches: [
         {
@@ -106,7 +108,7 @@ export default {
             diameter: '40mm',
             dial: 'white gold and silver'
           },
-          images: ['https://hodinkee.imgix.net/uploads/block/inline_image/content_image/9783/FPJ274.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4af2ad826cd5b12996aed41b279d62f0', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Resonance-CuirPl-G-D.png?itok=C81cr5__', 'img/tiktok/resonance-movement.jpg']
+          images: ['https://hodinkee.imgix.net/uploads/block/inline_image/content_image/9783/FPJ274.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4af2ad826cd5b12996aed41b279d62f0', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Resonance-CuirPl-G-D.png?itok=C81cr5__', 'https://www.fpjourne.com/sites/default/files/watch/image_background/xFPJ-BackResonance.jpg.pagespeed.ic.jbVHnDPQkh.webp', 'img/tiktok/resonance-movement.jpg']
         },
         {
           brand: 'F.P. Journe',
@@ -119,7 +121,7 @@ export default {
             diameter: '40mm',
             dial: 'white gold and silver'
           },
-          images: ['https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-Dos_0.png?itok=dDY-OzFj', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-G-D_0.png?itok=uwPxWRAt', 'img/tiktok/tourbillon-movement.jpg']
+          images: ['https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-Dos_0.png?itok=dDY-OzFj', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-G-D_0.png?itok=uwPxWRAt', 'https://www.fpjourne.com/sites/default/files/watch/image_background/xFPJ-BackTSouverain.jpg.pagespeed.ic._8WB5BtqNc.webp', 'img/tiktok/tourbillon-movement.jpg']
         },
         {
           brand: 'A. Lange & Söhne',
@@ -143,6 +145,20 @@ export default {
       return _.find($vm.watches, item => {
         return item.model === $vm.selectedWatch
       })
+    },
+    ctasOffset () {
+      return document.getElementById('ctas').offsetTop
+    }
+  },
+  watch: {
+    selectedModel () {
+      TweenMax.set('.fade-change', {autoAlpha: 0})
+      TweenMax.staggerFromTo('.fade-change', 0.7, {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1,
+        ease: Circ.easeInOut
+      }, 0.1)
     }
   },
   filters: {
@@ -150,6 +166,24 @@ export default {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
+  mounted () {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      console.log('test')
+      if (window.pageYOffset > this.ctasOffset) {
+        this.isCtasSticky = true
+      } else {
+        this.isCtasSticky = false
+      }
     }
   }
 }
@@ -163,10 +197,30 @@ export default {
 .row {
   position: relative;
   overflow: hidden;
-  // background-color: #eee;
-  // height: 100vh;
-  // border-bottom: 1px solid #444;
+}
 
+.row-watch-cta {
+  display: flex;
+  background-color: #eee;
+  z-index: 3;
+
+  &_over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .watch-select__inner {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .watch-select__brand {
+      font-size: .8rem;
+    }
+    .watch-select__name {
+      font-size: 1rem;
+    }
+  }
 }
 
 .hero-watch {
