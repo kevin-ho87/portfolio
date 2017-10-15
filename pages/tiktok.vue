@@ -6,15 +6,15 @@
         <div class="col row-hero__col-main">
           <h1 class="row-hero__title">TikTok</h1>
         </div>
+        <div class="hero-watch fade-change">
+          <img :src="selectedModel.heroImage" alt="">
+        </div>
         <div class="col row-hero__col-text">
-          <p>Tribute to the greatest tools of time, watches. Here are my choices for your everyday beater chronograph watch, haute horology, and dress watch.</p>
+          <p>Tribute to the greatest tools of time. Here are my choices for your everyday beater chronograph watch, haute horology, and dress watch.</p>
         </div>
       </div>
     </div>
 
-    <div class="hero-watch fade-change">
-      <img :src="selectedModel.heroImage" alt="">
-    </div>
 
     <div class="row-watch-cta-holder">
       <div id="ctas" class="row row-watch-cta" :class="{ 'row-watch-cta_over': isCtasSticky}">
@@ -37,7 +37,7 @@
           <div v-html="selectedModel.description"></div>
         </div>
 
-        <div class="row-details__col-sub">
+        <div class="col row-details__col-sub">
           <h3 class="row-details__title">Details</h3>
           <dl class="specs">
             <div class="specs__row" v-for="(value, key) in selectedModel.specs">
@@ -57,18 +57,12 @@
       </div>
     </div>
     <footer>
-      <p>Display 4 watches data.</p>
-      <p>https://www.omegawatches.com/planet-omega/60th-anniversary-speedmaster/alaska-project-2008</p>
-      <p>https://www.fpjourne.com/en/collection/souveraine-collection/chronometre-resonance</p>
-      <p>https://www.fpjourne.com/en/collection/souveraine-collection/tourbillon-souverain</p>
-      <p>https://www.alange-soehne.com/en/timepieces/saxonia/#saxonia-thin-37mm/introduction/201-027</p>
-      <p>https://www.hodinkee.com/</p>
-      <ul>
-        <li>Alaska Project</li>
-        <li>Tourbillon Souverain</li>
-        <li>Chronometre Resonance</li>
-        <li>Saxonia Thin</li>
-      </ul>
+      <div class="container footer-tiktok">
+        <div class="col">
+          <p>All images and details were retrieved from <a href="https://www.omegawatches.com/planet-omega/60th-anniversary-speedmaster/alaska-project-2008" target="_blank" rel="noopener">Omega</a>, <a href="https://www.fpjourne.com/en/collections" target="_blank" rel="noopener">F.P. Journe</a>, <a href="https://www.alange-soehne.com/en/timepieces/saxonia/#saxonia-thin-37mm/introduction/201-027" target="_blank" rel="noopener">A. Lange &amp; Söhne</a>, and <a href="https://www.hodinkee.com/" target="_blank" rel="noopener">Hodinkee</a>.</p>
+        </div>
+
+      </div>
     </footer>
 
   </div>
@@ -108,7 +102,7 @@ export default {
             diameter: '40mm',
             dial: 'white gold and silver'
           },
-          images: ['https://hodinkee.imgix.net/uploads/block/inline_image/content_image/9783/FPJ274.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4af2ad826cd5b12996aed41b279d62f0', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Resonance-CuirPl-G-D.png?itok=C81cr5__', 'https://www.fpjourne.com/sites/default/files/watch/image_background/xFPJ-BackResonance.jpg.pagespeed.ic.jbVHnDPQkh.webp', 'img/tiktok/resonance-movement.jpg']
+          images: ['https://hodinkee.imgix.net/uploads/block/inline_image/content_image/9783/FPJ274.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4af2ad826cd5b12996aed41b279d62f0', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Resonance-CuirPl-G-D.png?itok=C81cr5__', 'https://www.fpjourne.com/sites/default/files/watch/image_background/FPJ-BackResonance.jpg', 'img/tiktok/resonance-movement.jpg']
         },
         {
           brand: 'F.P. Journe',
@@ -169,7 +163,7 @@ export default {
     }
   },
   mounted () {
-    if (process.browser) {
+    if (process.browser && window.innerWidth > 800) {
       window.addEventListener('scroll', this.handleScroll)
     }
   },
@@ -178,7 +172,6 @@ export default {
   },
   methods: {
     handleScroll () {
-      console.log('test')
       if (window.pageYOffset > this.ctasOffset) {
         this.isCtasSticky = true
       } else {
@@ -224,21 +217,48 @@ export default {
 }
 
 .hero-watch {
-  width: 350px;
-  height: 450px;
-  position: fixed;
+  @media screen and (max-width: 800px) {
+    position: static;
+    width: 300px;
+    height: 390px;
+  }
+  @media screen and (min-width: 801px) {
+    position: fixed;
+    width: 350px;
+    height: 450px;
+  }
   left: 0;
   right: 0;
   top: calc((100% - 400px) / 2);
   margin-left: auto;
   margin-right: auto;
-
   z-index: 2;
-  // background-color: green;
 
   img {
     width: 100%;
     height: auto;
+    max-height: 100%;
+  }
+}
+
+// Footer
+.footer-tiktok {
+  font-size: .9rem;
+  margin-top: 4rem;
+  @media screen and (min-width: 801px) {
+    margin-top: 15rem;
+  }
+
+  a {
+    text-decoration: underline;
+    color: currentColor;
+  }
+
+  .col {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #dcdcdc;
+    width: 100%;
   }
 }
 
