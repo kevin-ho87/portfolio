@@ -149,6 +149,7 @@ export default {
 .home {
   display: flex;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 
   &__title {
