@@ -192,6 +192,217 @@ export default {
   overflow: hidden;
 }
 
+.row-hero {
+  background-color: #eee;
+  @media screen and (min-width: 801px) {
+    height: 100vh;
+  }
+  @media screen and (max-width: 800px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  &__title {
+    @media screen and (min-width: 801px) {
+      font-size: 6rem;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+
+  .container {
+    height: 100%;
+    @media screen and (min-width: 801px) {
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 801px) {
+    .col {
+      display: flex;
+      align-items: center;
+    }
+
+    &__col-main {
+      flex: 0 0 30%;
+    }
+
+    &__col-text {
+      flex: 0 0 30%;
+    }
+  }
+}
+
+// TikTok - custom input
+.watch-select {
+  @media screen and (max-width: 800px) {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+  @media screen and (min-width: 801px) {
+    max-width: 25%;
+    flex: 0 0 25%;
+  }
+  background-color: #DCDCDC;
+  background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(220,220,220,1) 100%);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  &__inner {
+    height: 100%;
+    display: block;
+    padding-left: 30%;
+    padding-right: 1rem;
+    @media screen and (max-width: 520px) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    @media screen and (min-width: 521px) {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+    background-repeat: no-repeat;
+    background-size: 25% auto;
+    background-position: 10px 50%;
+    transition: padding .3s ease-in-out,
+    background-color .3s ease-in-out;
+  }
+
+  &__brand {
+    display: block;
+    font-weight: bold;
+    font-size: .9rem;
+    transition: font-size .3s ease-in-out;
+  }
+
+  &__name {
+    display: block;
+    transition: font-size .3s ease-in-out;
+    @media screen and (min-width: 521px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__label {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__label:checked ~ .watch-select__inner {
+    background-color: #444;
+    color: #fff;
+  }
+}
+
+// Grid test
+.grid {
+  width: 100%;
+  @media screen and (min-width: 801px) {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 200px 1fr 1fr;
+  }
+  @media screen and (max-width: 800px) {
+    display: flex;
+  }
+  @media screen and (max-width: 520px) {
+    flex-wrap: wrap;
+  }
+}
+.img-box {
+  background-color: #fff;
+  @media screen and (max-width: 520px) {
+    flex: 0 0 50%;
+  }
+  @media screen and (min-width: 521px) and (max-width: 800px) {
+    flex: 0 0 25%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  &:nth-child(2) {
+    grid-column: 5 / 7;
+    grid-row: 1 / 3;
+  }
+  &:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+  }
+  &:nth-child(4) {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+}
+
+// Watch stats section
+@media screen and (min-width: 801px) {
+  .row-watch-cta-holder {
+    height: 180px;
+  }
+}
+.row-details {
+  background-color: #fff;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  @media screen and (min-width: 801px) {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
+
+  @media screen and (max-width: 520px) {
+    .container {
+      display: block;
+    }
+  }
+
+  &__col-main {
+    flex: 0 0 50%;
+    margin-right: auto;
+    @media screen and (min-width: 801px) {
+      flex: 0 0 35%;
+    }
+  }
+  &__col-sub {
+    flex: 0 0 40%;
+    @media screen and (min-width: 801px) {
+      flex: 0 0 30%;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+}
+
+.specs {
+  &__row {
+    display: flex;
+    margin-bottom: .5rem;
+
+    dt {
+      flex: 0 0 100px;
+    }
+
+    dd {
+      flex: 1 1 auto;
+    }
+  }
+}
+
 .row-watch-cta {
   display: flex;
   background-color: #eee;
