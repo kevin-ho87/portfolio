@@ -28,13 +28,13 @@ export default {
   },
   methods: {
     projectsOver (e) {
-      const projectRect = document.getElementById('home-projects').getBoundingClientRect()
+      let projectRect = document.getElementById('home-projects').getBoundingClientRect()
 
-      let xPosTilt = e.layerX / projectRect.width * 100 - 50
-      let yPosTilt = e.layerY / projectRect.height * 100 - 50
+      let xPosTilt = (e.pageX - projectRect.left) / projectRect.width * 100 - 50
+      let yPosTilt = (e.pageY - projectRect.top) / projectRect.height * 100 - 50
 
       TweenLite.to('#home-projects', 0.7, {
-        rotationY: 0.05 * xPosTilt,
+        rotationY: 0.10 * xPosTilt,
         rotationX: 0.20 * yPosTilt
       })
     },
