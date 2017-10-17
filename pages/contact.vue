@@ -178,6 +178,7 @@ export default {
 
 // Form
 .page-contact {
+  position: relative;
   overflow: hidden;
   height: 100vh;
   background-color: #eee;
