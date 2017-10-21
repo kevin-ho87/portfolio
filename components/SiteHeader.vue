@@ -92,6 +92,7 @@ export default {
   left: 0;
   z-index: 2;
   width: 100%;
+  // opacity: 0;
 }
 
 .logo,
