@@ -164,7 +164,7 @@ export default {
   &__col-text {
     position: relative;
     z-index: 1;
-    max-width: 40%;
+    max-width: 600px;
     flex: 0 0 40%;
     padding: 12rem 5rem 1.5rem;
   }
