@@ -89,7 +89,7 @@ export default {
             glass: 'hesalite',
             dial: 'white'
           },
-          images: ['https://www.omegawatches.com/speedmaster-60-bo/img/watches/2017-01-24%2014-17-22%20(B,Radius8,Smoothing4).jpg', 'https://www.omegawatches.com/speedmaster-60-bo/img/watches/2008---Alaska-Project-1861DOC2.jpg', 'https://www.omegawatches.com/speedmaster-60-bo/img/watches/2008---Alaska-Project-1861.png', 'https://www.omegawatches.com/speedmaster-60-bo/img/watches/2008---Alaska-Project-1861DOC3.jpg']
+          images: ['img/tiktok/alaska-1.jpg', 'img/tiktok/alaska-2.jpg', 'img/tiktok/alaska-3.jpg', 'img/tiktok/alaska-4.jpg']
         },
         {
           brand: 'F.P. Journe',
@@ -102,7 +102,7 @@ export default {
             diameter: '40mm',
             dial: 'white gold and silver'
           },
-          images: ['https://hodinkee.imgix.net/uploads/block/inline_image/content_image/9783/FPJ274.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4af2ad826cd5b12996aed41b279d62f0', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Resonance-CuirPl-G-D.png?itok=C81cr5__', 'https://www.fpjourne.com/sites/default/files/watch/image_background/FPJ-BackResonance.jpg', 'img/tiktok/resonance-movement.jpg']
+          images: ['img/tiktok/resonance-1.jpg', 'img/tiktok/resonance-2.jpg', 'img/tiktok/resonance-3.jpg', 'img/tiktok/resonance-4.jpg']
         },
         {
           brand: 'F.P. Journe',
@@ -115,7 +115,7 @@ export default {
             diameter: '40mm',
             dial: 'white gold and silver'
           },
-          images: ['https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-Dos_0.png?itok=dDY-OzFj', 'https://www.fpjourne.com/sites/default/files/styles/image_de_montre/public/declination/FPJ-Co-Souveraine-Tourbillon-CuirPl-G-D_0.png?itok=uwPxWRAt', 'https://www.fpjourne.com/sites/default/files/watch/image_background/xFPJ-BackTSouverain.jpg.pagespeed.ic._8WB5BtqNc.webp', 'img/tiktok/tourbillon-movement.jpg']
+          images: ['img/tiktok/tourbillon-1.jpg', 'img/tiktok/tourbillon-2.jpg', 'img/tiktok/tourbillon-3.jpg', 'img/tiktok/tourbillon-4.jpg']
         },
         {
           brand: 'A. Lange & Söhne',
@@ -128,7 +128,7 @@ export default {
             diameter: '37mm',
             dial: 'Solid silver, argenté'
           },
-          images: ['https://hodinkee.imgix.net/uploads/images/1467912800213-cwo33ot8g645dqif-734b05eadfd8d4b8de97a68ebb1720f6/P7050090.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=0b75e4c06ce8ad8e73eb4da1bac786e0', 'https://hodinkee.imgix.net/uploads/images/1467921671607-mntrmwey39l7ykq7-257208e35414da4d6285aa7d0f853e99/P7070077.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=84252b7d0723461abe8e6a301974eab9', 'https://www.alange-soehne.com/assets/GalleryImage-2880x1800-px/LANGE-SAXONIA-THIN-UW-ALS-L093-1-2.jpg', 'https://hodinkee.imgix.net/uploads/images/1467913864099-y2fbfqm74uwo5szb-6a759a154057cefe10ad43957cfa6f39/P7050098.jpg?ixlib=rails-1.1.0&auto=format&ch=Width%2CDPR%2CSave-Data&fit=crop&fm=jpg&q=55&usm=12&w=700&s=4ded95451dcaf34a4d02ece3b69d47dd']
+          images: ['img/tiktok/alange-1.jpg', 'img/tiktok/alange-2.jpg', 'img/tiktok/alange-3.jpg', 'img/tiktok/alange-4.jpg']
         }
       ]
     }

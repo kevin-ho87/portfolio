@@ -220,7 +220,7 @@ export default {
 // Honours
 .page-honours {
   background-color: $c-arsenal-primary;
-  background-image: url('https://www.arsenal.com/sites/default/files/styles/large/public/images/facup_2017.jpg?itok=63FFZqUu');
+  background-image: url('~assets/img/arsenal/facup_2017.jpg');
   background-repeat: no-repeat;
   background-origin: 50% 50%;
   background-size: cover;

@@ -187,7 +187,6 @@ export default {
 .page-onepiece {
   color: #444;
   overflow: hidden;
-  background-color: #ADEAEA;
 }
 
 .bg-fill {
