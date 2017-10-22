@@ -17,28 +17,48 @@
         <div class="menu-block">
           <button type="button" class="menu-close" @click="$store.commit('hideMenu')"><svg viewBox="1361 52 31 31" width="31" height="31"><path d="M1377.84 67.5l9.962 9.972-1.33 1.33-9.97-9.96-9.974 9.96-1.33-1.33 9.96-9.972-9.96-9.972 1.33-1.33 9.972 9.96 9.972-9.96 1.33 1.33-9.96 9.97v.002z"/><path fill="none" d="M1361 52h31v31h-31z"/></svg></button>
 
-          <h3 class="menu__category">Projects</h3>
           <nav class="menu">
-            <ul>
-              <li class="menu__list">
-                <nuxt-link to="/project/nintendo" class="menu__link">Nintendo</nuxt-link>
+            <ul class="menu-lvl-1">
+              <li class="menu-lvl-1__list">
+                <span class="menu-lvl-1__link">Projects</span>
+                <ul class="menu-lvl-2">
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/project/nintendo" class="menu-lvl-2__link">Nintendo</nuxt-link>
+                  </li>
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/project/mind" class="menu-lvl-2__link">Mind</nuxt-link>
+                  </li>
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/project/cav" class="menu-lvl-2__link">Consumer Affairs Victoria</nuxt-link>
+                  </li>
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/project/telstra" class="menu-lvl-2__link">Telstra</nuxt-link>
+                  </li>
+                </ul>
               </li>
-              <li class="menu__list"><nuxt-link to="/project/mind" class="menu__link">Mind</nuxt-link></li>
-              <li class="menu__list"><nuxt-link to="/project/cav" class="menu__link">Consumer Affairs Victoria</nuxt-link></li>
-              <li class="menu__list"><nuxt-link to="/project/telstra" class="menu__link">Telstra</nuxt-link></li>
+              <li class="menu-lvl-1__list">
+                <span class="menu-lvl-1__link">Tributes</span>
+                <ul class="menu-lvl-2">
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/arsenal" class="menu-lvl-2__link">Arsenal</nuxt-link>
+                  </li>
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/tiktok" class="menu-lvl-2__link">TikTok</nuxt-link>
+                  </li>
+                  <li class="menu-lvl-2__list">
+                    <nuxt-link to="/onepiece" class="menu-lvl-2__link">One Piece</nuxt-link>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-lvl-1__list">
+                <nuxt-link to="/about" class="menu-lvl-1__link">About</nuxt-link>
+              </li>
+              <li class="menu-lvl-1__list">
+                <nuxt-link to="/contact" class="menu-lvl-1__link">Contact</nuxt-link>
+              </li>
             </ul>
           </nav>
 
-          <nav class="menu">
-            <ul>
-              <li class="menu__list">
-                <nuxt-link to="/about" class="menu__link">About</nuxt-link>
-              </li>
-              <li class="menu__list">
-                <nuxt-link to="/contact" class="menu__link">Contact</nuxt-link>
-              </li>
-            </ul>
-          </nav>
 
           <div class="social-holder">
             <a href="https://github.com/kevin-ho87/" target="_blank" rel="noopener" class="social-link"><svg viewBox="1296 815 40 38.75" width="40" height="38.75"><path d="M1316 815c-11 0-20 9-20 20 0 8.5 5.333 15.75 12.75 18.667.75-.167 1.417-.834 1.417-1.667v-3.667H1308c-1.583 0-2.917-.75-3.583-1.916-.167-.334-.334-.75-.5-1.167-.334-.917-.75-1.917-1.584-2.5-.333-.25-.5-.75-.416-1.167.166-.416.583-.75 1.333-.666.833.083 2.083 1 2.833 2 .667.833 1.167 1.333 2.167 1.333h.25c.75 0 2.583 0 2.917-.333.25-.334.416-.584.666-.834-5-1-7.833-3.916-7.833-8.333 0-1.5.417-3 1.333-4.333-.333-1.25-1.083-4.5.5-5.917l.25-.25h.334c2.166 0 3.75.917 4.75 1.667 2.916-1.084 6.25-1.084 9.166 0 .917-.75 2.5-1.667 4.75-1.667h.334l.25.25c1.583 1.5.833 4.667.5 5.917.833 1.333 1.333 2.833 1.333 4.333 0 4.417-2.833 7.333-7.75 8.333 1.25 1.334 1.917 3.334 1.917 4.917v4.083c0 .834.583 1.5 1.416 1.667 7.334-3 12.667-10.25 12.667-18.75 0-11-9-20-20-20z" fill="#132D5B"/></svg></a>
@@ -227,34 +247,40 @@ export default {
   }
 }
 
-.menu {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 2rem;
-
-  &__list {
-    text-align: right;
-    margin-bottom: .5rem;
-  }
-
-  &__category {
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  &__link {
-    display: inline-block;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: currentColor;
-  }
-}
-
 .social-holder {
   margin-top: auto;
 }
 .social-link {
   margin-left: .5rem;
+}
+
+
+.menu {
+  text-align: right;
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+}
+
+.menu-lvl-1 {
+  &__list {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.menu-lvl-2 {
+  &__list {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
 }
 
 </style>
