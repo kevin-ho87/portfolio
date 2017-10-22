@@ -8,17 +8,26 @@
       </div>
       <div class="container">
         <div class="col project-holder">
-          <nuxt-link to="/project/nintendo" class="project project_nintendo">
-            <img src="~assets/img/logo-nintendo.png" alt="">
+          <nuxt-link v-for="project in projectsCta" class="project" :class="`project_${project.path}`" :to="{ path: '/project/' + project.path }">
+            <img :src="`/img/${project.logo}`" alt="">
           </nuxt-link>
-          <nuxt-link to="/project/mind" class="project project_mind">
-            <img src="~assets/img/logo-mind.png" alt="">
+        </div>
+      </div>
+      <div class="container tributes-title-holder">
+        <div class="col">
+          <h3 class="title">Tributes</h3>
+        </div>
+      </div>
+      <div class="container">
+        <div class="col project-holder">
+          <nuxt-link to="/arsenal" class="project project_arsenal">
+            <img src="~assets/img/arsenal/logo-w.png" alt="" class="img-tribute-logo">
           </nuxt-link>
-          <nuxt-link to="/project/cav" class="project project_cav">
-            <img src="~assets/img/logo-cav.png" alt="">
+          <nuxt-link to="/tiktok" class="project project_tiktok">
+            <img src="/img/tiktok/logo.png" alt="" class="img-tribute-logo">
           </nuxt-link>
-          <nuxt-link to="/project/telstra" class="project project_telstra">
-            <img src="~assets/img/logo-telstra.png" alt="">
+          <nuxt-link to="/onepiece" class="project project_onepiece">
+            <img src="/img/onepiece/logo-bnw.jpg" alt="" class="img-tribute-logo">
           </nuxt-link>
         </div>
       </div>
@@ -35,6 +44,19 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      projectsCta: []
+    }
+  },
+  mounted () {
+    this.projectsCta = process.env.projects
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~assets/sass/base/settings";
@@ -90,6 +112,27 @@
   &.nuxt-link-active {
     display: none;
   }
+
+  &_arsenal {
+    background-color: $c-arsenal-primary;
+  }
+
+  &_tiktok {
+    background-color: $primary-colour;
+  }
+
+  &_onepiece {
+    background-color: #000;
+  }
+}
+
+.tributes-title-holder {
+  margin-top: 10vh;
+}
+
+.img-tribute-logo {
+  max-width: 210px;
+  max-height: 90px;
 }
 
 
