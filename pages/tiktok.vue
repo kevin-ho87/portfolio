@@ -1,6 +1,5 @@
 <template>
   <div class="page-tiktok">
-
     <div class="row row-hero">
       <div class="container">
         <div class="col row-hero__col-main">
@@ -14,8 +13,6 @@
         </div>
       </div>
     </div>
-
-
     <div class="row-watch-cta-holder">
       <div id="ctas" class="row row-watch-cta" :class="{ 'row-watch-cta_over': isCtasSticky}">
         <div class="container">
@@ -29,14 +26,12 @@
         </div>
       </div>
     </div>
-
     <div class="row row-details">
       <div class="container">
         <div class="col row-details__col-main">
           <h3 class="row-details__title">Overview</h3>
           <div v-html="selectedModel.description"></div>
         </div>
-
         <div class="col row-details__col-sub">
           <h3 class="row-details__title">Details</h3>
           <dl class="specs">
@@ -46,7 +41,6 @@
             </div>
           </dl>
         </div>
-
       </div>
     </div>
     <div class="row">
@@ -61,18 +55,49 @@
         <div class="col">
           <p>All images and details were retrieved from <a href="https://www.omegawatches.com/planet-omega/60th-anniversary-speedmaster/alaska-project-2008" target="_blank" rel="noopener">Omega</a>, <a href="https://www.fpjourne.com/en/collections" target="_blank" rel="noopener">F.P. Journe</a>, <a href="https://www.alange-soehne.com/en/timepieces/saxonia/#saxonia-thin-37mm/introduction/201-027" target="_blank" rel="noopener">A. Lange &amp; Söhne</a>, and <a href="https://www.hodinkee.com/" target="_blank" rel="noopener">Hodinkee</a>.</p>
         </div>
-
       </div>
     </footer>
-
   </div>
 </template>
 
 <script>
 import _ from 'lodash'
-import { TweenMax, Circ } from 'gsap'
+import { TimelineMax, TweenMax, Circ, Back } from 'gsap'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.from('.hero-watch', 0.7, {
+        autoAlpha: 0,
+        scale: 0,
+        ease: Circ.easeOut
+      })
+
+      tl.from('.row-hero__col-main, .row-hero__col-text', 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeInOut
+      }, '-=.4')
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
+    },
+    leave (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 1 }, { autoAlpha: 0, ease: Circ.easeOut })
+
+      tl.staggerTo('.row-hero__col-main, .hero-watch, .row-hero__col-text', 0.7, {
+        y: -100,
+        autoAlpha: 0,
+        ease: Back.easeIn
+      }, 0.1)
+
+      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
+    }
+  },
   data () {
     return {
       isCtasSticky: false,

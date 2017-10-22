@@ -82,6 +82,39 @@
 import { TweenLite, TimelineMax, Circ, Back } from 'gsap'
 
 export default {
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.from('.box-magic', 0.7, {
+        autoAlpha: 0,
+        scale: 0.9,
+        ease: Circ.easeOut
+      })
+
+      tl.from('.section_intro .section__col', 0.7, {
+        autoAlpha: 0,
+        ease: Circ.easeInOut
+      }, '-=.4')
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
+    },
+    leave (el, done) {
+      let tl = new TimelineMax({ onComplete: done })
+
+      tl.fromTo('.header', 0.3, { autoAlpha: 1 }, { autoAlpha: 0, ease: Circ.easeOut })
+
+      tl.staggerTo('.box-magic, .section_intro .section__col', 0.7, {
+        y: -100,
+        autoAlpha: 0,
+        ease: Back.easeIn
+      }, 0.1)
+
+      tl.to(el, 0.7, { autoAlpha: 0, ease: Circ.easeOut }, '-=0.1')
+    }
+  },
   mounted () {
     if (process.browser && window.innerWidth > 520) {
       window.addEventListener('scroll', this.handleScroll)
