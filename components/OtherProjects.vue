@@ -8,7 +8,7 @@
       </div>
       <div class="container">
         <div class="col project-holder">
-          <nuxt-link v-for="project in projectsCta" class="project" :class="`project_${project.path}`" :to="{ path: '/project/' + project.path }">
+          <nuxt-link v-for="project in projectsCta" class="project" :class="`project_${project.path}`" :to="{ path: '/project/' + project.path }" :key="project.id">
             <img :src="`/img/${project.logo}`" alt="">
           </nuxt-link>
         </div>
