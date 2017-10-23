@@ -126,7 +126,16 @@ module.exports = {
   css: [
     '@/assets/sass/main.scss'
   ],
+  generate: {
+    routes: [
+      '/project/nintendo',
+      '/project/mind',
+      '/project/cav',
+      '/project/telstra'
+    ]
+  },
   router: {
+    base: '/',
     middleware: 'menu'
   },
 
