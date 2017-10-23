@@ -107,7 +107,7 @@ export default {
           brand: 'Omega',
           model: 'alaska project',
           heroImage: 'img/tiktok/alaska.png',
-          description: '<p>In this timepiece, one of OMEGA’s most innovative dreams became reality. Created in a limited edition of 1,970 pieces in 2008, the watch is based on the “Alaska II” project.</p>',
+          description: '<p>Introduced in 2008 with a limited number of 1970 pieces. 1970 being the year that Omega developed the first Alaska Project moonwatch. The outer red aluminium casing was made to withstand greater temperatures. I just love the design and history behind this timepiece. The symmetry of the sub dials and the asymmetry of the shuttle hands greatly complement each other. The red chronograph seconds hand tops it off as the icing on the cake.</p>',
           specs: {
             case: 'steel',
             diameter: '42mm',

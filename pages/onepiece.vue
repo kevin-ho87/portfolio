@@ -19,7 +19,7 @@
       <div class="container">
         <div class="col section__col">
           <h1 class="title-hero">One piece</h1>
-          <p>One piece anime page tribute prototyping. Background change colour.</p>
+          <p>Tribute to the best anime/manga in the world. Join Luffy and the Straw Hat Pirates on their adventure filled quest for the ultimate treasure, One Piece!</p>
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@
         <div class="col section__col">
           <div class="textbox textbox_characters">
             <h3>Characters</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui hic dicta sint, quas debitis, quam dignissimos. Ex quaerat fugiat obcaecati itaque explicabo, inventore eos, atque dolor, provident fuga, quibusdam eaque.</p>
-            <img src="/img/onepiece/luffy-gold.png" alt="" class="textbox__luffy">
+            <p>One of the greatest aspects of the show are the relationships between the many characters. They are connected by a storyline from the past, present, and future.</p>
+            <img src="/img/onepiece/luffy-gold.png" alt="Film Gold Luffy" class="textbox__luffy">
           </div>
         </div>
       </div>
@@ -47,8 +47,8 @@
       <div class="container">
         <div class="col section__col">
           <div class="textbox">
-            <h3>Devil fruit</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui hic dicta sint, quas debitis, quam dignissimos. Ex quaerat fugiat obcaecati itaque explicabo, inventore eos, atque dolor, provident fuga, quibusdam eaque.</p>
+            <h3>Devil Fruit</h3>
+            <p>Eating a devil fruit gives the eater an unique ability that empowers them greatly. Abilities range from turning into a rubber man, controlling lightning, to manipulating age. However, these powers do come at a cost. A devil fruit user is rendered useless when submerged in water.</p>
           </div>
         </div>
         <div class="col section__col">
