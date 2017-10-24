@@ -25,11 +25,13 @@ export default {
     if (process.browser) {
       this.createDraggable()
 
-      const box = document.getElementById('jersey-holder').getBoundingClientRect()
-      // console.log(box)
-      this.holderWidth = box.width
-      this.holderHeight = box.width
-      this.maskXPos = this.holderWidth / 2
+      setTimeout(() => {
+        const box = document.getElementById('jersey-holder').getBoundingClientRect()
+        // console.log(box)
+        this.holderWidth = box.width
+        this.holderHeight = box.height
+        this.maskXPos = this.holderWidth / 2
+      }, 300)
     }
   },
   methods: {
