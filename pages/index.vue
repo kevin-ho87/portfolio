@@ -30,6 +30,10 @@ export default {
     mode: 'out-in',
     css: false,
     enter (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       TweenMax.from(el, 0.7, {
         autoAlpha: 0,
         ease: Circ.easeOut,
@@ -37,6 +41,10 @@ export default {
       })
     },
     leave (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       let tl = new TimelineMax({ onComplete: done })
 
       tl.to('.header', 0.3, { autoAlpha: 0 })
