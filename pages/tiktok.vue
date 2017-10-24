@@ -120,7 +120,7 @@ export default {
           brand: 'F.P. Journe',
           model: 'chronometre resonance',
           heroImage: 'img/tiktok/resonance.png',
-          description: 'f.p. journe commemorates the 10 year anniversary of the renowned chronomètre à résonance with a new edition now featuring a 24 hour indicator.',
+          description: 'Two time zones synchronised by the natural resonance phenomenon, incredible. F.P. Journe never ceases to amaze with their creativity and engineering working in harmony.',
           specs: {
             movement: 'manual',
             case: 'platinum',
@@ -133,7 +133,7 @@ export default {
           brand: 'F.P. Journe',
           model: 'tourbillon souverain',
           heroImage: 'img/tiktok/tourbillon.png',
-          description: 'in 1999, françois-paul journe launched his f.p.journe -invenit et fecit- brand with the tourbillon souverain, the first model in the souveraine collection and the only tourbillon wristwatch with a remontoire (constant force device) and dead beat seconds.',
+          description: 'Best tourbillon watch in the world. The Tourbillon Souverain is coupled with the constant force and dead beat seconds for improved accuracy. The tourbillon is a balance wheel in a rotating cage. This was done back in the day to distribute lubricants evenly throughout the escapement.',
           specs: {
             movement: 'manual',
             case: 'platinum',
@@ -146,7 +146,7 @@ export default {
           brand: 'A. Lange & Söhne',
           model: 'saxonia thin',
           heroImage: 'img/tiktok/saxonia.png',
-          description: 'With its case height of merely 5.9 millimetres, the SAXONIA THIN is the flattest watch crafted by Lange so far. Five years after its debut, the two-hand watch now features a subtly reworked dial that corresponds to the design of the SAXONIA models presented in 2015. The new SAXONIA THIN with a case diameter of 37.0 millimetres is available exclusively in 18-carat pink or white gold.',
+          description: 'Silver/white gold case, white dial, hour and minutes hands only. This is the true definition of a dress watch. One thing I like about Lange is the way they treat all their watches with equal care. This entry level piece has the same level of finishing as their high end peices.',
           specs: {
             movement: 'manual',
             case: 'white gold',
