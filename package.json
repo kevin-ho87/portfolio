@@ -4,6 +4,12 @@
   "description": "Nuxt.js project",
   "author": "kevin-ho87 <31581926+kevin-ho87@users.noreply.github.com>",
   "private": true,
+  "config": {
+   "nuxt": {
+     "host": "0.0.0.0",
+     "port": "3333"
+   }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
