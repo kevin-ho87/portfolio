@@ -3,7 +3,7 @@
   <div class="row-about container">
     <div class="page-col col">
       <h1 class="title-page">_About me</h1>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, ex eum! Nobis repellendus, cum recusandae quidem unde omnis nostrum laudantium animi voluptate iusto! Nostrum aut atque velit, exercitationem eaque aperiam.</p>
+      <p class="desc">Hello, I'm Kevin and I am a front end web developer. I am passionate about enhancing the user experience by combining good design and code into one awesome application.</p>
     </div>
   </div>
   <div class="row-about container">
@@ -17,13 +17,13 @@
         <li><span class="level-2-title">HTML</span>
           <ul class="level-2">
             <li>Accessibility - Level AA</li>
+            <li>Newsletter</li>
           </ul>
         </li>
         <li><span class="level-2-title">CSS</span>
           <ul class="level-2">
-            <li>CSS 3</li>
             <li>Sass, B.E.M. Sass</li>
-            <li>Zurb Foundation, Susy</li>
+            <li>Zurb Foundation, Bulma, Susy</li>
           </ul>
         </li>
         <li><span class="level-2-title">Javascript</span>
@@ -66,7 +66,7 @@
   <div class="row-about container" v-scroll>
     <div class="row-about__col-text col">
       <h3 class="title-desc">_Sketching</h3>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam impedit quidem, pariatur non. Incidunt a esse consectetur nostrum ad velit aut nam aliquam quaerat sint. Expedita illo ipsum beatae necessitatibus.</p>
+      <p class="desc">Sometimes I like to take a step away from technology to visualise concepts and draw cartoons.</p>
     </div>
     <div class="col">
       <div class="placeholder-img"></div>
@@ -75,7 +75,7 @@
   <div class="row-about row-about_alt container" v-scroll>
     <div class="row-about__col-text col">
       <h3 class="title-desc">_Arsenal</h3>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam impedit quidem, pariatur non. Incidunt a esse consectetur nostrum ad velit aut nam aliquam quaerat sint. Expedita illo ipsum beatae necessitatibus.</p>
+      <p class="desc">I enjoy watching football (soccer to some of you) and basketball. Arsenal is my favourite football team!</p>
     </div>
     <div class="col">
       <div class="placeholder-img"></div>
@@ -84,7 +84,16 @@
   <div class="row-about container" v-scroll>
     <div class="row-about__col-text col">
       <h3 class="title-desc">_Watches</h3>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam impedit quidem, pariatur non. Incidunt a esse consectetur nostrum ad velit aut nam aliquam quaerat sint. Expedita illo ipsum beatae necessitatibus.</p>
+      <p class="desc">Just cause, it's a cool way to tell time. I like these cool mechanical creations people wear on their wrists.</p>
+    </div>
+    <div class="col">
+      <div class="placeholder-img"></div>
+    </div>
+  </div>
+  <div class="row-about row-about_alt container" v-scroll>
+    <div class="row-about__col-text col">
+      <h3 class="title-desc">_One Piece</h3>
+      <p class="desc">Action packed pirate treasure hunting adventure! My favourite manga/anime.</p>
     </div>
     <div class="col">
       <div class="placeholder-img"></div>
