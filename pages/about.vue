@@ -69,7 +69,7 @@
       <p class="desc">Sometimes I like to take a step away from technology to visualise concepts and draw cartoons.</p>
     </div>
     <div class="col">
-      <div class="placeholder-img"></div>
+      <img src="~assets/img/sketch.jpg" alt="">
     </div>
   </div>
   <div class="row-about row-about_alt container" v-scroll>
@@ -78,7 +78,7 @@
       <p class="desc">I enjoy watching football (soccer to some of you) and basketball. Arsenal is my favourite football team!</p>
     </div>
     <div class="col">
-      <div class="placeholder-img"></div>
+      <img src="~assets/img/arsenal/facup_2017.jpg" width="700" alt="">
     </div>
   </div>
   <div class="row-about container" v-scroll>
@@ -87,7 +87,7 @@
       <p class="desc">Just cause, it's a cool way to tell time. I like these cool mechanical creations people wear on their wrists.</p>
     </div>
     <div class="col">
-      <div class="placeholder-img"></div>
+      <img src="~static/img/tiktok/alaska-4.jpg" alt="">
     </div>
   </div>
   <div class="row-about row-about_alt container" v-scroll>
@@ -96,7 +96,7 @@
       <p class="desc">Action packed pirate treasure hunting adventure! My favourite manga/anime.</p>
     </div>
     <div class="col">
-      <div class="placeholder-img"></div>
+      <img src="~static/img/onepiece/chars-2.jpg" alt="">
     </div>
   </div>
   <OtherProjects v-scroll />
