@@ -21,13 +21,13 @@ module.exports = {
         id: 1,
         path: 'nintendo',
         title: 'Yours to play',
-        description: 'Lorem ipsum dolor sit amet.',
+        description: 'Welcome to the world of Nintendo 3DS.',
         url: 'https://www.nintendo.com.au/yours-to-play/',
         logo: 'nintendo-logo.png',
         color: '#E60012',
         tech: 'Greensock, jQuery, HTML5, CSS3',
         year: '2016',
-        info: 'Front end. lorem.',
+        info: 'Building this awesome site gave me the opportunity to enhance the user experience with timeline based transitions and animations. Whilst working closely with the designer and project manager, I was able to deliver this fun site to the standards set by  Nintendo.',
         gifs: ['nintendo-1.gif', 'nintendo-4.jpg', 'nintendo-2.gif', 'nintendo-3.gif', 'nintendo-5.gif'],
         screenshots: [
           {
