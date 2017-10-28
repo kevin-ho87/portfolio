@@ -89,6 +89,10 @@ export default {
     mode: 'out-in',
     css: false,
     enter (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       let tl = new TimelineMax({ onComplete: done })
 
       tl.from('.box-magic', 0.7, {
@@ -105,6 +109,10 @@ export default {
       tl.fromTo('.header', 0.3, { autoAlpha: 0 }, { autoAlpha: 1, ease: Circ.easeOut })
     },
     leave (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       let tl = new TimelineMax({ onComplete: done })
 
       tl.fromTo('.header', 0.3, { autoAlpha: 1 }, { autoAlpha: 0, ease: Circ.easeOut })

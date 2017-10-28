@@ -117,6 +117,10 @@ export default {
     mode: 'out-in',
     css: false,
     enter (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       TweenMax.from(el, 0.7, {
         autoAlpha: 0,
         ease: Circ.easeOut,
@@ -126,6 +130,10 @@ export default {
       TweenMax.to('.header', 0.3, { autoAlpha: 1, ease: Circ.easeOut })
     },
     leave (el, done) {
+      if (window.innerWidth <= 800) {
+        done()
+        return
+      }
       TweenMax.to(el, 0.7, {
         autoAlpha: 0,
         ease: Circ.easeOut,
@@ -168,6 +176,10 @@ export default {
     &__col-text {
       flex: 1 1 0;
     }
+  }
+
+  .btn {
+    margin-bottom: 1rem;
   }
 }
 
