@@ -3,18 +3,21 @@
     <div class="bg-fill bg-fill_map"></div>
     <div class="bg-fill bg-fill_devil"></div>
 
-    <div class="box-magic">
-      <div class="slide-fruit-holder">
-        <div class="box-magic__slide slide-fruit slide-fruit_1"></div>
-        <div class="box-magic__slide slide-fruit slide-fruit_2"></div>
-        <div class="box-magic__slide slide-fruit slide-fruit_3"></div>
-      </div>
+    <div class="box-magic-holder">
+      <div class="box-magic">
+        <div class="slide-fruit-holder">
+          <div class="box-magic__slide slide-fruit slide-fruit_1"></div>
+          <div class="box-magic__slide slide-fruit slide-fruit_2"></div>
+          <div class="box-magic__slide slide-fruit slide-fruit_3"></div>
+        </div>
 
-      <div class="box-magic__slide slide-char box-magic__slide_1"></div>
-      <div class="box-magic__slide slide-char box-magic__slide_2"></div>
-      <div class="box-magic__slide slide-char box-magic__slide_3"></div>
-      <div class="box-magic__slide slide-char box-magic__slide_4"></div>
+        <div class="box-magic__slide slide-char box-magic__slide_1"></div>
+        <div class="box-magic__slide slide-char box-magic__slide_2"></div>
+        <div class="box-magic__slide slide-char box-magic__slide_3"></div>
+        <div class="box-magic__slide slide-char box-magic__slide_4"></div>
+      </div>
     </div>
+
     <div class="section section_intro">
       <div class="container">
         <div class="col section__col">
@@ -132,9 +135,11 @@ export default {
       const elem = '.box-magic'
       TweenLite.set('.char-img, .img-closer', {autoAlpha: 0})
 
+      TweenLite.set('.box-magic-holder', {
+        transformPerspective: 1
+      })
+
       TweenLite.set(elem, {
-        z: '0.01',
-        transformStyle: 'preserve-3d',
         transformPerspective: 500,
         transformOrigin: '50% 50%'
       })
@@ -281,8 +286,18 @@ export default {
   }
 }
 
+.box-magic-holder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
 .box-magic {
-  transform: translate(55%, 0%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.01, 1);
+  transform: translate(55%, 0%) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   width: calc(50% - 40px);
   max-width: 550px;
   height: 50%;
@@ -291,7 +306,6 @@ export default {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 4;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;

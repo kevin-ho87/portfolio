@@ -163,8 +163,8 @@ export default {
   right: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 10px;
   border: 0;
   border-radius: 50%;
   width: 40px;
