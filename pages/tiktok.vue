@@ -146,7 +146,7 @@ export default {
           brand: 'A. Lange & Söhne',
           model: 'saxonia thin',
           heroImage: 'img/tiktok/saxonia.png',
-          description: 'Silver/white gold case, white dial, hour and minutes hands only. This is the true definition of a dress watch. One thing I like about Lange is the way they treat all their watches with equal care. This entry level piece has the same level of finishing as their high end peices.',
+          description: 'Silver/white gold case, white dial, hour and minutes hands only. This is the true definition of a dress watch. One thing I like about Lange is the way they treat all their watches with equal care. This entry level piece has the same level of finishing as their high end pieces.',
           specs: {
             movement: 'manual',
             case: 'white gold',

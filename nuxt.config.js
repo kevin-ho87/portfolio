@@ -3,11 +3,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'portfolio',
+    title: 'Kevin Ho - Front end developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'I am Kevin Ho, Front end developer, Arsenal supporter, One Piece fan.' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -25,9 +25,9 @@ module.exports = {
         url: 'https://www.nintendo.com.au/yours-to-play/',
         logo: 'nintendo-logo.png',
         color: '#E60012',
-        tech: 'Greensock, jQuery, HTML5, CSS3',
+        tech: 'Greensock, jQuery, HTML5, CSS3, Responsive web design',
         year: '2016',
-        info: 'Building this awesome site gave me the opportunity to enhance the user experience with timeline based transitions and animations. Whilst working closely with the designer and project manager, I was able to deliver this fun site to the standards set by  Nintendo.',
+        info: 'Building this awesome site gave me the opportunity to enhance the user experience with timeline based animations. Whilst working closely with the designer and project manager, I was able to deliver this fun site to the high standards set by  Nintendo.',
         gifs: ['nintendo-1.gif', 'nintendo-4.jpg', 'nintendo-2.gif', 'nintendo-3.gif', 'nintendo-5.gif'],
         screenshots: [
           {
@@ -46,13 +46,13 @@ module.exports = {
         id: 2,
         path: 'mind',
         title: 'Mind Australia',
-        description: 'Lorem ipsum dolor sit amet.',
+        description: 'Mind Australia Limited is one of the country\'s leading community-managed specialist mental health service providers.',
         url: 'https://www.mindaustralia.org.au/',
         logo: 'mind-logo.png',
         color: '#0AAEEF',
-        tech: 'Greensock, jQuery, HTML5, CSS3',
+        tech: 'WCAG 2.0 level AA accessibility, jQuery, HTML5, CSS3, Drupal, Responsive web design',
         year: '2017',
-        info: 'Front end. lorem.',
+        info: 'The biggest challenge I faced during the front end development of this project was the task of unifying responsive web design, meeting WCAG 2.0 level AA requirements, and enhancing the user experience with transitions.',
         gifs: ['mind-1.gif', 'mind-3.jpg', 'mind-2.gif', 'mind-4.gif'],
         screenshots: [
           {
@@ -71,13 +71,13 @@ module.exports = {
         id: 3,
         path: 'cav',
         title: 'Party for your rights',
-        description: 'Lorem ipsum dolor sit amet.',
+        description: 'A fun and interactive site educating today\'s youth on their consumer rights.',
         url: 'http://partyforyourrights.vic.gov.au/',
         logo: 'cav-logo.png',
         color: '#441C72',
-        tech: 'Greensock, jQuery, HTML5, CSS3',
-        year: '2017',
-        info: 'Front end. lorem.',
+        tech: 'Backbone, Greensock, jQuery, HTML5, CSS3',
+        year: '2013',
+        info: 'My main role within this project was the creation of the mobile web application with the use of Backbone js. This includes layout construction and programming logic. In addition, I assisted and worked closely with the designer and senior developer in the creation of the desktop site. The tasks include bug testing/fixing and usability enhancements.',
         gifs: ['cav-1.gif', 'cav-2.jpg', 'cav-3.jpg', 'cav-4.gif', 'cav-5.gif'],
         screenshots: [
           {
@@ -96,13 +96,13 @@ module.exports = {
         id: 4,
         path: 'telstra',
         title: 'Telstra exchange',
-        description: 'Lorem ipsum dolor sit amet.',
+        description: 'Designed to provide news, insights and opinions around the way you use technology to connect.',
         url: 'https://exchange.telstra.com.au/',
         logo: 'telstra-logo.png',
         color: '#A0148C',
-        tech: 'Greensock, jQuery, HTML5, CSS3',
+        tech: 'Responsive web design, jQuery, HTML5, CSS3, Wordpress',
         year: '2017',
-        info: 'Front end. lorem.',
+        info: 'My role within this project was to craft the responsive design layout re-skin of the Telstra blog site. In addition, I assisted the back end developer in the integration of the site re-skin. The biggest challenge I faced was the task of implementing the new elements together with the existing required elements whilst meeting the high requirements of Telstra\'s branding guidelines.',
         gifs: ['telstra-1.gif', 'telstra-2.jpg', 'telstra-3.jpg'],
         screenshots: [
           {
