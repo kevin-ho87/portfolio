@@ -7,7 +7,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'I am Kevin Ho, Front end developer, Arsenal supporter, One Piece fan.' }
+      { hid: 'description', name: 'description', content: 'I am Kevin Ho, Front end developer, Arsenal supporter, One Piece fan.' },
+      { property: 'og:image', content: 'http://kevin-ho.surge.sh/img/share.jpg' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
