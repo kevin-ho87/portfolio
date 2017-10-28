@@ -60,7 +60,7 @@
   <footer class="footer">
     <div class="container">
       <div class="col">
-        <p>All content referenced from https://www.arsenal.com/</p>
+        <p>All content referenced from <a href="https://www.arsenal.com/" target="_blank" rel="noopener">Arsenal</a></p>
       </div>
     </div>
   </footer>
@@ -251,6 +251,10 @@ export default {
   padding-bottom: 2rem;
   font-size: .8rem;
   text-align: center;
+
+  a {
+    color: currentColor;
+  }
 
   .col {
     width: 100%;
