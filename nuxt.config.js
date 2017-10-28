@@ -139,6 +139,9 @@ module.exports = {
     base: '/',
     middleware: 'menu'
   },
+  plugins: [
+    { src: '~plugins/ga.js', ssr: false }
+  ],
 
   /*
   ** Build configuration
