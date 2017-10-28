@@ -57,6 +57,7 @@
       <ul class="desc">
         <li>SEO</li>
         <li>Banner ads</li>
+        <li>Google web designer</li>
         <li>Backbone</li>
         <li>Silverstripe, Magento, Wordpress, Drupal</li>
         <li>ASP VBScript, PHP, SQL, MySQL</li>
@@ -76,6 +77,7 @@
     <div class="row-about__col-text col">
       <h3 class="title-desc">_Arsenal</h3>
       <p class="desc">I enjoy watching football (soccer to some of you) and basketball. Arsenal is my favourite football team!</p>
+      <nuxt-link to="/arsenal" class="btn">View tribute</nuxt-link>
     </div>
     <div class="col">
       <img src="~assets/img/arsenal/facup_2017.jpg" width="700" alt="">
@@ -85,6 +87,7 @@
     <div class="row-about__col-text col">
       <h3 class="title-desc">_Watches</h3>
       <p class="desc">Just cause, it's a cool way to tell time. I like these cool mechanical creations people wear on their wrists.</p>
+      <nuxt-link to="/tiktok" class="btn">View tribute</nuxt-link>
     </div>
     <div class="col">
       <img src="~static/img/tiktok/alaska-4.jpg" alt="">
@@ -94,6 +97,7 @@
     <div class="row-about__col-text col">
       <h3 class="title-desc">_One Piece</h3>
       <p class="desc">Action packed pirate treasure hunting adventure! My favourite manga/anime.</p>
+      <nuxt-link to="/onepiece" class="btn">View tribute</nuxt-link>
     </div>
     <div class="col">
       <img src="~static/img/onepiece/chars-2.jpg" alt="">
