@@ -246,7 +246,6 @@ export default {
   max-width: 320px;
   height: 100%;
   padding: 2rem;
-  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -276,6 +275,10 @@ export default {
 }
 .social-link {
   margin-left: .5rem;
+
+  &:hover {
+    opacity: .8;
+  }
 }
 
 .menu {
