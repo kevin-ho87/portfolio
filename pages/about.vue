@@ -174,7 +174,12 @@ export default {
     }
 
     &__col-text {
-      flex: 1 1 0;
+      // flex: 1 1 0;
+    }
+
+    .col {
+      max-width: 50%;
+      flex: 0 0 50%;
     }
   }
 
