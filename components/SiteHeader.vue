@@ -1,7 +1,7 @@
 <template>
   <header class="header" role="banner">
-    <nuxt-link to="/" class="logo"><span>K-Ho</span></nuxt-link>
-    <button type="button" class="hamburger" @click="$store.commit('showMenu')">
+    <nuxt-link to="/" class="logo" aria-label="Home"><span>K-Ho</span></nuxt-link>
+    <button type="button" class="hamburger" @click="$store.commit('showMenu')" aria-label="Menu">
       <span class="hamburger__span hamburger__span_1"></span>
       <span class="hamburger__span hamburger__span_2"></span>
       <span class="hamburger__span hamburger__span_3"></span>
@@ -16,7 +16,7 @@
         <div class="menu-angle"></div>
         <div class="menu-block">
           <button type="button" class="menu-close" @click="$store.commit('hideMenu')"><svg viewBox="1361 52 31 31" width="31" height="31"><path d="M1377.84 67.5l9.962 9.972-1.33 1.33-9.97-9.96-9.974 9.96-1.33-1.33 9.96-9.972-9.96-9.972 1.33-1.33 9.972 9.96 9.972-9.96 1.33 1.33-9.96 9.97v.002z"/><path fill="none" d="M1361 52h31v31h-31z"/></svg></button>
-          <nav class="menu">
+          <nav class="menu" role="navigation">
             <ul class="menu-lvl-1">
               <li class="menu-lvl-1__list">
                 <span class="menu-lvl-1__link">Projects</span>
