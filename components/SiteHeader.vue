@@ -1,6 +1,6 @@
 <template>
   <header class="header" role="banner">
-    <nuxt-link to="/" class="logo">K-Ho</nuxt-link>
+    <nuxt-link to="/" class="logo"><span>K-Ho</span></nuxt-link>
     <button type="button" class="hamburger" @click="$store.commit('showMenu')">
       <span class="hamburger__span hamburger__span_1"></span>
       <span class="hamburger__span hamburger__span_2"></span>
@@ -122,6 +122,7 @@ export default {
 }
 
 .logo {
+  position: relative;
   top: 2rem;
   left: 2rem;
   color: $primary-colour;
@@ -130,8 +131,33 @@ export default {
   font-weight: 700;
   display: inline-block;
   padding: .3rem .5rem;
+  transition: color .3s ease-in-out;
   @media screen and (max-width: 800px) {
     left: 20px;
+  }
+
+  span {
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    background-color: $primary-colour;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width .1s ease-in-out;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover:before {
+    width: 100%;
+    transition: width .7s ease-in-out;
   }
 }
 
