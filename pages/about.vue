@@ -65,41 +65,41 @@
     </div>
   </div>
   <div class="row-about container" v-scroll>
-    <div class="row-about__col-text col">
+    <div class="col-feature col">
       <h3 class="title-desc">_Sketching</h3>
       <p class="desc">Sometimes I like to take a step away from technology to visualise concepts and draw cartoons.</p>
     </div>
-    <div class="col">
+    <div class="col-feature col">
       <img src="~assets/img/sketch.jpg" alt="">
     </div>
   </div>
   <div class="row-about row-about_alt container" v-scroll>
-    <div class="row-about__col-text col">
+    <div class="col-feature col">
       <h3 class="title-desc">_Arsenal</h3>
       <p class="desc">I enjoy watching football (soccer to some of you) and basketball. Arsenal is my favourite football team!</p>
       <nuxt-link to="/arsenal" class="btn">View tribute</nuxt-link>
     </div>
-    <div class="col">
+    <div class="col-feature col">
       <img src="~assets/img/arsenal/facup_2017.jpg" width="700" alt="">
     </div>
   </div>
   <div class="row-about container" v-scroll>
-    <div class="row-about__col-text col">
+    <div class="col-feature col">
       <h3 class="title-desc">_Watches</h3>
       <p class="desc">Just cause, it's a cool way to tell time. I like these cool mechanical creations people wear on their wrists.</p>
       <nuxt-link to="/tiktok" class="btn">View tribute</nuxt-link>
     </div>
-    <div class="col">
+    <div class="col-feature col">
       <img src="~static/img/tiktok/alaska-4.jpg" alt="">
     </div>
   </div>
   <div class="row-about row-about_alt container" v-scroll>
-    <div class="row-about__col-text col">
+    <div class="col-feature col">
       <h3 class="title-desc">_One Piece</h3>
       <p class="desc">Action packed pirate treasure hunting adventure! My favourite manga/anime.</p>
       <nuxt-link to="/onepiece" class="btn">View tribute</nuxt-link>
     </div>
-    <div class="col">
+    <div class="col-feature col">
       <img src="~static/img/onepiece/chars-2.jpg" alt="">
     </div>
   </div>
@@ -173,11 +173,7 @@ export default {
       flex-direction: row-reverse;
     }
 
-    &__col-text {
-      // flex: 1 1 0;
-    }
-
-    .col {
+    .col-feature {
       max-width: 50%;
       flex: 0 0 50%;
     }
