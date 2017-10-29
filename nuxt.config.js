@@ -139,8 +139,11 @@ module.exports = {
     base: '/',
     middleware: 'menu'
   },
-  plugins: [
-    { src: '~plugins/ga.js', ssr: false }
+  modules: [
+    // Simple usage
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-108806512-1'
+    }]
   ],
 
   /*
