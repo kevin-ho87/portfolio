@@ -1,6 +1,6 @@
 <template>
   <div id="jersey-holder" class="jersey-holder">
-    <img src="~/assets/img/arsenal/jersey-home.jpg" alt="" class="jersey-resize jersey-home" :style="maskX">
+    <img src="~/assets/img/arsenal/jersey-home.jpg" alt="" id="jersey-home" class="jersey-resize jersey-home" :style="maskX">
     <img src="~/assets/img/arsenal/jersey-away.jpg" alt="" class="jersey-resize">
     <div class="drag-overlay"></div>
     <div class="drag-item"></div>
@@ -26,7 +26,7 @@ export default {
       this.createDraggable()
 
       setTimeout(() => {
-        const box = document.getElementById('jersey-holder').getBoundingClientRect()
+        const box = document.getElementById('jersey-home').getBoundingClientRect()
         // console.log(box)
         this.holderWidth = box.width
         this.holderHeight = box.height
