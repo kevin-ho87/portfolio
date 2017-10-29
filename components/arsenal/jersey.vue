@@ -23,15 +23,16 @@ export default {
   },
   mounted () {
     if (process.browser) {
-      this.createDraggable()
+      let $vm = this
+      $vm.createDraggable()
+      const box = document.getElementById('jersey-home')
 
       setTimeout(() => {
-        const box = document.getElementById('jersey-home').getBoundingClientRect()
         // console.log(box)
-        this.holderWidth = box.width
-        this.holderHeight = box.height
-        this.maskXPos = this.holderWidth / 2
-      }, 300)
+        $vm.holderWidth = box.width
+        $vm.holderHeight = box.height
+        $vm.maskXPos = $vm.holderWidth / 2
+      }, 1500)
     }
   },
   methods: {
